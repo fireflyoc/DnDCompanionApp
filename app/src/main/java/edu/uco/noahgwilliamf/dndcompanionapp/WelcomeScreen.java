@@ -13,7 +13,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class WelcomeScreen extends AppCompatActivity {
 
     private DrawerLayout drawer;
     private ListView menuList;
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.welcome_activity);
 
 
         //get the array of option strings
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("dice");
             } else {
                 //its a character they selected, open character sheeet for that character
-                System.out.println("Character");
+                System.out.println("PlayerCharacter");
             }
         }//end
 

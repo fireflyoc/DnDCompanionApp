@@ -18,30 +18,22 @@ public class WelcomeScreen extends AppCompatActivity {
     private DrawerLayout drawer;
     private ListView menuList;
     private ImageButton menuButton;
-
-    private String[] optionsStringArray;
-    private String[] options;
-
-    private ArrayList<String> characterList;
+    private NavigationDrawerClickListener navi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_activity);
-
-
-        //get the array of option strings
-        characterList = new ArrayList<>();
-        options = getResources().getStringArray(R.array.menu);
-        optionsStringArray = buildOptions();
+        navi = new NavigationDrawerClickListener(this,getResources());
 
 
         drawer = (DrawerLayout) findViewById(R.id.main_layout);
         menuList = (ListView) findViewById(R.id.main_menu);
         menuButton = (ImageButton) findViewById(R.id.menuButton);
 
-        menuList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, optionsStringArray));
-        menuList.setOnItemClickListener(new DrawerItemClickListener());
+        menuList.setAdapter(navi.getListAdapter());
+        menuList.setOnItemClickListener(navi);
+
 
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,53 +44,10 @@ public class WelcomeScreen extends AppCompatActivity {
 
     }
 
-    private String[] buildOptions() {
-        ArrayList<String> options = new ArrayList<>();
-        readCharactersFile();
-        options = characterList;
-        for (String s : getResources().getStringArray(R.array.menu)) {
-            options.add(s);
-        }
-        return options.toArray(new String[options.size()]);
-    }
-
-    //todo finishthis
-    private void readCharactersFile() {
-        characterList.add("Bob the Barb");
-        characterList.add("Cathy the Cleric");
-        characterList.add("TurdMuffin the Gnome Rogue");
-    }
 
 
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            handleSelection(optionsStringArray[position]);
-        }
-
-        private void handleSelection(String selection) {
-            if (selection.equalsIgnoreCase(options[0])) {
-                //spell
-                System.out.println("pushed spell");
-            } else if (selection.equalsIgnoreCase(options[1])) {
-                //feats
-                System.out.println("pusehd feat");
-            } else if (selection.equalsIgnoreCase(options[2])) {
-                //items
-                System.out.println("items");
-            } else if (selection.equalsIgnoreCase(options[3])) {
-                //conditions
-                System.out.println("conditions");
-            } else if (selection.equalsIgnoreCase(options[3])) {
-                //dice
-                System.out.println("dice");
-            } else {
-                //its a character they selected, open character sheeet for that character
-                System.out.println("PlayerCharacter");
-            }
-        }//end
 
 
-    }
+
+
 }

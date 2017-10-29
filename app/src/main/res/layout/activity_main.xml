@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.uco.ngeorge.dndcompanionapp.MainActivity"
+    android:background="@drawable/splash"
+    tools:context="edu.uco.noahgwilliamf.dndcompanionapp.MainActivity"
     android:id="@+id/main_layout">
 
     <RelativeLayout
@@ -18,13 +19,6 @@
             android:src="@drawable/menu_icon"
             android:background="@android:color/transparent"/>
 
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            />
     </RelativeLayout>
 
     <ListView
@@ -33,7 +27,7 @@
         android:choiceMode="singleChoice"
         android:id="@+id/main_menu"
         android:divider="@android:color/transparent"
-        android:background="#ddd"
+        android:background="@color/colorPrimary"
         android:layout_gravity="start"
         />
 

@@ -2,8 +2,6 @@
     <string name="app_name">DnDCompanionApp</string>
 
     <array name="menu">
-        <item>Character 1</item>
-        <item>Character 2</item>
         <item>Spell List</item>
         <item>Feats List</item>
         <item>Items List</item>

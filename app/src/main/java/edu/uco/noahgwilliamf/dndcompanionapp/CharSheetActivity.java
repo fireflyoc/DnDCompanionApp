@@ -1,4 +1,4 @@
-package edu.uco.ngeorge.dndcompanionapp;
+package edu.uco.noahgwilliamf.dndcompanionapp;
 
 import android.app.Activity;
 import android.os.Bundle;

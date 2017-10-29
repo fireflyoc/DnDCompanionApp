@@ -1,4 +1,4 @@
-package edu.uco.ngeorge.dndcompanionapp;
+package edu.uco.noahgwilliamf.dndcompanionapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

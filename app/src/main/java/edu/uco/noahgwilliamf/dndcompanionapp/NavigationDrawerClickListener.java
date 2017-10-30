@@ -1,6 +1,7 @@
 package edu.uco.noahgwilliamf.dndcompanionapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,16 +15,40 @@ import java.util.ArrayList;
  */
 
 
-public class NavigationDrawerClickListener implements ListView.OnItemClickListener {
+public  class NavigationDrawerClickListener implements ListView.OnItemClickListener {
 
     private String[] optionsStringArray;
     private String[] options;
     private ArrayList<String> characterList;
     private Resources res;
     private ArrayAdapter<String> listAdapter;
+    private Context c;
+    private static NavigationDrawerClickListener instance = null;
 
-    public NavigationDrawerClickListener(Context c, Resources res){
+
+    public static NavigationDrawerClickListener getInstance(Context c, Resources res){
+        if(instance==null){
+            instance = new NavigationDrawerClickListener(c,res);
+        }
+        return instance;
+
+    }
+
+    private NavigationDrawerClickListener(Context c, Resources res){
+
+        if(res != null) {
        this.res = res;
+            System.out.println(res.toString());
+        }else{
+            System.out.println("passed RES was null");
+        }
+        if(c != null) {
+            this.c = c;
+            System.out.println(c.toString());
+        }else{
+            System.out.println("passed c was null");
+        }
+
         characterList = new ArrayList<>();
         optionsStringArray = buildOptions();
         options = res.getStringArray(R.array.menu);
@@ -76,7 +101,9 @@ public class NavigationDrawerClickListener implements ListView.OnItemClickListen
             //dice
             System.out.println("dice");
         } else {
-            //its a character they selected, open character sheeet for that character
+            Intent i = new Intent(c,CharSheetActivity.class);
+            i.putExtra("CharName",selection);
+            c.startActivity(i);
             System.out.println("PlayerCharacter");
         }
     }//end

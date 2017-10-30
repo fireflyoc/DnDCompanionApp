@@ -24,7 +24,7 @@ public class WelcomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_activity);
-        navi = new NavigationDrawerClickListener(this,getResources());
+        navi = NavigationDrawerClickListener.getInstance(this,getResources());
 
 
         drawer = (DrawerLayout) findViewById(R.id.main_layout);
@@ -43,11 +43,6 @@ public class WelcomeScreen extends AppCompatActivity {
         });
 
     }
-
-
-
-
-
 
 
 }

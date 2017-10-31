@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="Class">Cleric</item>
+    <array name="Stats">
+        <item name="Str">10</item>
+        <item name="Dex">10</item>
+        <item name="Con">10</item>
+        <item name="Wis">10</item>
+        <item name="Int">10</item>
+        <item name="Cha">10</item>
+    </array>
+    <item name="Name">Charlie</item>
+    <item name="Level">1</item>
+    <array name="Known_Spells">
+        <item name="Spell 1">Cure Wounds</item>
+        <item name="Spell 2">Guiding Bolt</item>
+    </array>
+
+    <array name="Items">
+        <item>Backpack</item>
+        <item>Warhammer</item>
+    </array>
+
+
+
+
+
+</resources>

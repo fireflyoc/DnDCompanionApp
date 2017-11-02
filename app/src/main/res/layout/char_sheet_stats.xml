@@ -68,7 +68,7 @@
                 android:background="@drawable/border"
                 android:text="Ability\nScores:"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/charStrTextView"
@@ -76,9 +76,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@drawable/border"
-                android:text="STR:\n 22"
+                android:text="STR:\n 22\n+4"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/charDexTextView"
@@ -86,9 +86,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@drawable/border"
-                android:text="DEX:\n 22"
+                android:text="DEX:\n 22\n+4"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/charConTextView"
@@ -96,9 +96,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@drawable/border"
-                android:text="CON:\n 22"
+                android:text="CON:\n 22\n+4"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/charIntTextView"
@@ -106,9 +106,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@drawable/border"
-                android:text="INT:\n 22"
+                android:text="INT:\n 22\n+4"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/charWisTextView"
@@ -116,9 +116,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@drawable/border"
-                android:text="WIS:\n 22"
+                android:text="WIS:\n 22\n+4"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/charChaTextView"
@@ -126,9 +126,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@drawable/border"
-                android:text="CHA:\n 22"
+                android:text="CHA:\n 22\n+4"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
         </GridLayout>
 
@@ -176,16 +176,49 @@
         </LinearLayout>
 
 
-        <ListView
-            android:id="@+id/charaDetailsScoll"
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/line1"
-            android:layout_margin="5dp"
             android:layout_toRightOf="@id/charStatLayout"
-            android:background="@drawable/border_thick"
-            android:choiceMode="singleChoice" />
+            android:layout_below="@id/line1"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/charSkillsProf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_thick"
+                android:choiceMode="singleChoice" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:id="@+id/charSkillsExpand"/>
+            <ListView
+                android:id="@+id/charaAttacks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_thick"
+                android:choiceMode="singleChoice" />
+            <ListView
+                android:id="@+id/charaEquips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_thick"
+                android:choiceMode="singleChoice" />
+            <ListView
+                android:id="@+id/charaOtherProf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_thick"
+                android:choiceMode="singleChoice" />
+        </RelativeLayout>
+
 
 
     </RelativeLayout>

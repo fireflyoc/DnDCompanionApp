@@ -8,4 +8,31 @@
         <item>Conditions</item>
         <item>Dice Roller</item>
     </array>
+
+    <array name="skills_saving_throws">
+        <item>Strength</item>
+        <item>Dexterity</item>
+        <item>Constitution</item>
+        <item>Intelligence</item>
+        <item>Wisdom</item>
+        <item>Charisma</item>
+        <item>Acrobatics (Dex)</item>
+        <item>Animal Handling (Wis)</item>
+        <item>Arcana (Int)</item>
+        <item>Athletics (Str)</item>
+        <item>Deception (Cha)</item>
+        <item>History (Int)</item>
+        <item>Insight (Wis)</item>
+        <item>Intimidation (Cha)</item>
+        <item>Investigation (Int)</item>
+        <item>Medicine (Wis)</item>
+        <item>Nature (Int)</item>
+        <item>Perception (Wis)</item>
+        <item>Performance (Cha)</item>
+        <item>Persuasion (Cha)</item>
+        <item>Religion (Int)</item>
+        <item>Slight of Hand (Dex)</item>
+        <item>Stealth (Dex)</item>
+        <item>Survival (Wis)</item>
+    </array>
 </resources>

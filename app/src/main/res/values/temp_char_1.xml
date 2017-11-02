@@ -9,8 +9,25 @@
         <item name="Int">10</item>
         <item name="Cha">10</item>
     </array>
+
+    <item name="Armor_Class">19</item>
+    <item name="Speed">35</item>
+    <item name="Hit_Die">d8</item>
+    <array name="Proficiencies">
+        <item>Athletics</item>
+        <item>Insight</item>
+        <item>Religion</item>
+        <item>Perception</item>
+        <item>Charisma</item>
+        <item>Wisdom</item>
+        <item>All Weapons</item>
+        <item>All Armor</item>
+        <item>Medicine Kit</item>
+    </array>
+
     <item name="Name">Charlie</item>
     <item name="Level">1</item>
+
     <array name="Known_Spells">
         <item name="Spell 1">Cure Wounds</item>
         <item name="Spell 2">Guiding Bolt</item>
@@ -21,6 +38,9 @@
         <item>Warhammer</item>
     </array>
 
+    <array name="Bio">
+        <item name="Background">Priest</item>
+    </array>
 
 
 

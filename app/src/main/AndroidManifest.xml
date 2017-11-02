@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.CharSheetActivity"></activity>
-        <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.WelcomeScreen">
+        <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.CharSheetActivity"></activity>
+        <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.DnDResourceLookUpActivity"></activity>
+        <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.WelcomeScreen">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

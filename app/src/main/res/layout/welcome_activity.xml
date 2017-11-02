@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash"
-    tools:context="edu.uco.noahgwilliamf.dndcompanionapp.WelcomeScreen"
+    tools:context="edu.uco.noahgwilliamf.dndcompanionapp.Activities.WelcomeScreen"
     android:id="@+id/main_layout">
 
     <RelativeLayout

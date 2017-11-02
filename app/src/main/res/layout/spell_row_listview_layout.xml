@@ -1,0 +1,29 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/spell_row_listView_tableLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="*">
+
+    <TableRow
+        android:background="@drawable/border_thick"
+        >
+
+        <TextView
+            android:id="@+id/spell_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SPELL NAME"
+            android:textAlignment="center"
+            android:textSize="25dp" />
+
+
+        <TextView
+            android:id="@+id/spell_Level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SPELL LEVEL"
+            android:textAlignment="center"
+            android:textSize="25dp" />
+
+    </TableRow>
+</TableLayout>

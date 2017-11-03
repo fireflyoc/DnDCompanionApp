@@ -1,4 +1,4 @@
-package edu.uco.noahgwilliamf.dndcompanionapp;
+package edu.uco.noahgwilliamf.dndcompanionapp.Controls;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import edu.uco.noahgwilliamf.dndcompanionapp.Activities.CharSheetActivity;
+import edu.uco.noahgwilliamf.dndcompanionapp.Activities.DnDResourceLookUpActivity;
+import edu.uco.noahgwilliamf.dndcompanionapp.R;
 
 /**
  * Created by Decker on 10/29/2017.
@@ -86,25 +90,29 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
 
     private void handleSelection(String selection) {
         if (selection.equalsIgnoreCase(options[0])) {
-            //spell
             System.out.println("pushed spell");
+            Intent i = new Intent(c,DnDResourceLookUpActivity.class);
+            i.putExtra("resource","spell");
+            c.startActivity(i);
+
         } else if (selection.equalsIgnoreCase(options[1])) {
             //feats
-            System.out.println("pusehd feat");
+            System.out.println("pushed feat");
         } else if (selection.equalsIgnoreCase(options[2])) {
             //items
-            System.out.println("items");
+            System.out.println("pushed items");
         } else if (selection.equalsIgnoreCase(options[3])) {
             //conditions
-            System.out.println("conditions");
+            System.out.println("pushed conditions");
         } else if (selection.equalsIgnoreCase(options[3])) {
             //dice
-            System.out.println("dice");
+            System.out.println("pushed dice");
         } else {
+            System.out.println("pushed Character");
             Intent i = new Intent(c,CharSheetActivity.class);
             i.putExtra("CharName",selection);
             c.startActivity(i);
-            System.out.println("PlayerCharacter");
+
         }
     }//end
 

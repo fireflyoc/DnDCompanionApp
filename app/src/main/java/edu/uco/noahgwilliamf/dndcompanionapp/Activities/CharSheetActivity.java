@@ -1,4 +1,4 @@
-package edu.uco.noahgwilliamf.dndcompanionapp;
+package edu.uco.noahgwilliamf.dndcompanionapp.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import edu.uco.noahgwilliamf.dndcompanionapp.Controls.NavigationDrawerClickListener;
+import edu.uco.noahgwilliamf.dndcompanionapp.R;
 
 /**
  * Created by Noah G on 10/27/2017.
@@ -37,6 +40,13 @@ public class CharSheetActivity extends Activity {
         setUpNavi();
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        drawer.closeDrawers();
+    }
+
 
     private void setUpNavi() {
 

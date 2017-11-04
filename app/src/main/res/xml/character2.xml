@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<resources>
+    <item name="Class">Cleric</item>
 
-</PreferenceScreen>
+    <item name="Str">10</item>
+    <item name="Dex">10</item>
+    <item name="Con">10</item>
+    <item name="Wis">10</item>
+    <item name="Int">10</item>
+    <item name="Cha">10</item>
+    <item name="Armor_Class">19</item>
+    <item name="Speed">35</item>
+    <item name="Hit_Die">d8</item>
+    <item name="Name">Charlie</item>
+    <item name="Level">1</item>
+
+    <item name="Proficiencies">Athletics</item>
+    <item name="Proficiencies">Insight</item>
+    <item name="Proficiencies">Religion</item>
+    <item name="Proficiencies">Perception</item>
+    <item name="Proficiencies">Charisma</item>
+    <item name="Proficiencies">Wisdom</item>
+    <item name="Proficiencies">All Weapons</item>
+    <item name="Proficiencies">All Armor</item>
+    <item name="Proficiencies">Medicine Kit</item>
+
+
+    <item name="Spell">Cure Wounds</item>
+    <item name="Spell">Guiding Bolt</item>
+
+    <item name="Gear">Backpack</item>
+    <item name="gear">Warhammer</item>
+
+</resources>

@@ -7,13 +7,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.NavigationDrawerClickListener;
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.SpellListViewArrayAdapter;
@@ -91,9 +89,9 @@ public class DnDResourceLookUpActivity extends Activity {
         navi = NavigationDrawerClickListener.getInstance(this, getResources());
 
 
-        drawer = (DrawerLayout) findViewById(R.id.charSheet_layout);
-        menuList = (ListView) findViewById(R.id.charSheetMenu);
-        menuButton = (ImageButton) findViewById(R.id.charSheetMenuButton);
+        drawer = (DrawerLayout) findViewById(R.id.spell_lookup_layout);
+        menuList = (ListView) findViewById(R.id.spell_lookup_menu);
+        menuButton = (ImageButton) findViewById(R.id.spell_lookup_menu_button);
 
         if (navi != null) {
             System.out.println("navi wasnt null setting up menu");

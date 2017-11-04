@@ -1,7 +1,5 @@
 package edu.uco.noahgwilliamf.dndcompanionapp.Models;
 
-import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDLookUpResource;
-
 /**
  * Created by Decker on 10/30/2017.
  */

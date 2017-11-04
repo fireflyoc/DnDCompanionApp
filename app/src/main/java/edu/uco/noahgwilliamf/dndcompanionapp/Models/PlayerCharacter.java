@@ -9,38 +9,19 @@ import java.util.ArrayList;
 public class PlayerCharacter {
 
 
-    private String name;
-    private int hp;
-    private int maxHp;
-    private int moveSpeed;
-    private int bab;
-    private int baseAC;
-    private int willSave;
-    private int reflexSave;
-    private int conSave;
-    private int str;
-    private int dex;
-    private int con;
-    private int wis;
-    private int inte;
-    private int cha;
-    private ArrayList<String> spellList;
-    private ArrayList<String> itemList;
+    private String name, hitDie;
+    private int hp, maxHp, moveSpeed, baseAC, str, dex, con, wis, inte, cha, level;
+    public ArrayList<String> spellList, itemList, proficiencies;
 
     //stupid long constructor
-    public PlayerCharacter(String name, int hp, int maxHp, int moveSpeed, int bab,
-                           int baseAC, int willSave, int reflexSave, int conSave,
-                           int str, int dex, int con, int wis, int inte, int cha) {
+    public PlayerCharacter(String name, int hp, int maxHp, int moveSpeed,
+                           int baseAC, int str, int dex, int con, int wis, int inte, int cha) {
 
         this.setName(name);
         this.setHp(hp);
         this.setMaxHp(maxHp);
         this.setMoveSpeed(moveSpeed);
-        this.setBab(bab);
         this.setBaseAC(baseAC);
-        this.setWillSave(willSave);
-        this.setReflexSave(reflexSave);
-        this.setConSave(conSave);
         this.setStr(str);
         this.setCon(con);
         this.setDex(dex);
@@ -50,13 +31,13 @@ public class PlayerCharacter {
 
         itemList = new ArrayList<>();
         spellList = new ArrayList<>();
+        proficiencies = new ArrayList<>();
     }
 
     //basic constructor
-    public PlayerCharacter(String name) {
-
-        this.name = name;
+    public PlayerCharacter() {
         itemList = new ArrayList<>();
+        proficiencies = new ArrayList<>();
         spellList = new ArrayList<>();
     }
 
@@ -70,6 +51,22 @@ public class PlayerCharacter {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setHitDie(String hd){
+        hitDie = hd;
+    }
+
+    public String getHitDie(){
+        return hitDie;
+    }
+
+    public void setLevel(int l){
+        level = l;
+    }
+
+    public int getLevel(){
+        return level;
     }
 
     public int getHp() {
@@ -96,44 +93,12 @@ public class PlayerCharacter {
         this.moveSpeed = moveSpeed;
     }
 
-    public int getBab() {
-        return bab;
-    }
-
-    public void setBab(int bab) {
-        this.bab = bab;
-    }
-
     public int getBaseAC() {
         return baseAC;
     }
 
     public void setBaseAC(int baseAC) {
         this.baseAC = baseAC;
-    }
-
-    public int getWillSave() {
-        return willSave;
-    }
-
-    public void setWillSave(int willSave) {
-        this.willSave = willSave;
-    }
-
-    public int getReflexSave() {
-        return reflexSave;
-    }
-
-    public void setReflexSave(int reflexSave) {
-        this.reflexSave = reflexSave;
-    }
-
-    public int getConSave() {
-        return conSave;
-    }
-
-    public void setConSave(int conSave) {
-        this.conSave = conSave;
     }
 
     public int getStr() {
@@ -184,19 +149,4 @@ public class PlayerCharacter {
         this.cha = cha;
     }
 
-    public ArrayList<String> getSpellList() {
-        return spellList;
-    }
-
-    public void setSpellList(ArrayList<String> spellList) {
-        this.spellList = spellList;
-    }
-
-    public ArrayList<String> getItemList() {
-        return itemList;
-    }
-
-    public void setItemList(ArrayList<String> itemList) {
-        this.itemList = itemList;
-    }
 }//end class

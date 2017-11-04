@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">DnDCompanionApp</string>
+    <string name="STR">STR</string>
+    <string name="DEX">DEX</string>
+    <string name="CON">CON</string>
+    <string name="INT">INT</string>
+    <string name="WIS">WIS</string>
+    <string name="CHA">CHA</string>
 
     <array name="menu">
         <item>Spell List</item>

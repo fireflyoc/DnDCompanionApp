@@ -64,71 +64,211 @@
             <TextView
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/border"
                 android:text="Ability\n Scores:"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/charStrTextView"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="3dp"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/border"
-                android:text="STR:\n 22\n+4"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                android:id="@+id/strBox"
+                android:background="@drawable/border">
+                <TextView
+                    android:id="@+id/charStr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/STR"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+                <EditText
+                    android:id="@+id/charStrValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:text="22"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/charDexTextView"
+                <TextView
+                    android:id="@+id/charStrBonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+4"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/border"
-                android:text="DEX:\n 22\n+4"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                android:id="@+id/dexBox"
+                android:background="@drawable/border">
+                <TextView
+                    android:id="@+id/charDex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DEX"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/charConTextView"
+                <EditText
+                    android:id="@+id/charDexValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:text="22"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/charDexBonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+4"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/border"
-                android:text="CON:\n 22\n+4"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                android:id="@+id/conBox"
+                android:background="@drawable/border">
+                <TextView
+                    android:id="@+id/charCon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CON"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/charIntTextView"
+                <EditText
+                    android:id="@+id/charConValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:text="22"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/charConBonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+4"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/border"
-                android:text="INT:\n 22\n+4"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                android:id="@+id/intBox"
+                android:background="@drawable/border">
+                <TextView
+                    android:id="@+id/charInt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/INT"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/charWisTextView"
+                <EditText
+                    android:id="@+id/charIntValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:text="22"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/charIntBonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+4"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/border"
-                android:text="WIS:\n 22\n+4"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                android:id="@+id/wisBox"
+                android:background="@drawable/border">
+                <TextView
+                    android:id="@+id/charWis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/WIS"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/charChaTextView"
+                <EditText
+                    android:id="@+id/charWisValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:text="22"
+                    android:textAlignment="center"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/charWisBonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+4"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/border"
-                android:text="CHA:\n 22\n+4"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                android:id="@+id/chaBox"
+                android:background="@drawable/border">
+                <TextView
+                    android:id="@+id/charCha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CHA"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/charChaValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:text="22"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/charChaBonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+4"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
         </GridLayout>
 
@@ -148,7 +288,6 @@
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
-
                 android:text="AC:\n 22"
                 android:textAlignment="center"
                 android:textSize="20sp" />

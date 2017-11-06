@@ -6,6 +6,7 @@
     <string name="INT">INT</string>
     <string name="WIS">WIS</string>
     <string name="CHA">CHA</string>
+    <string name="ability_scores">Ability\nScores</string>
 
     <array name="menu">
         <item>Spell List</item>
@@ -15,13 +16,20 @@
         <item>Dice Roller</item>
     </array>
 
+    <array name="specialties">
+        <item>Skills and Saving Throws</item>
+        <item>Gear and Items</item>
+        <item>Attacks and Spellcasting</item>
+        <item>Other Proficiencies</item>
+    </array>
+
     <array name="skills_saving_throws">
-        <item>Strength</item>
-        <item>Dexterity</item>
-        <item>Constitution</item>
-        <item>Intelligence</item>
-        <item>Wisdom</item>
-        <item>Charisma</item>
+        <item>Strength Save</item>
+        <item>Dexterity Save</item>
+        <item>Constitution Save</item>
+        <item>Intelligence Save</item>
+        <item>Wisdom Save</item>
+        <item>Charisma Save</item>
         <item>Acrobatics (Dex)</item>
         <item>Animal Handling (Wis)</item>
         <item>Arcana (Int)</item>

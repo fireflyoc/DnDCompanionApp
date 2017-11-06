@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="Class">Cleric</item>
+    <class>Wizard</class>
 
-    <item name="Str">10</item>
-    <item name="Dex">10</item>
-    <item name="Con">10</item>
-    <item name="Wis">10</item>
-    <item name="Int">10</item>
-    <item name="Cha">10</item>
-    <item name="Armor_Class">19</item>
-    <item name="Speed">35</item>
-    <item name="Hit_Die">d8</item>
-    <item name="Name">Charlie</item>
-    <item name="Level">1</item>
+    <Str>7</Str>
+    <Dex>10</Dex>
+    <Con>13</Con>
+    <Wis>12</Wis>
+    <Int>16</Int>
+    <Cha>11</Cha>
+    <Armor_Class>14</Armor_Class>
+    <Speed>30</Speed>
+    <Hit_Die>d8</Hit_Die>
+    <Name>Gandalf</Name>
+    <Level>1</Level>
+    <Race>Human</Race>
 
-    <item name="Proficiencies">Athletics</item>
-    <item name="Proficiencies">Insight</item>
-    <item name="Proficiencies">Religion</item>
-    <item name="Proficiencies">Perception</item>
-    <item name="Proficiencies">Charisma</item>
-    <item name="Proficiencies">Wisdom</item>
-    <item name="Proficiencies">All Weapons</item>
-    <item name="Proficiencies">All Armor</item>
-    <item name="Proficiencies">Medicine Kit</item>
+    <Proficiencies>Arcana</Proficiencies>
+    <Proficiencies>Insight</Proficiencies>
+    <Proficiencies>History</Proficiencies>
+    <Proficiencies>Perception</Proficiencies>
+    <Proficiencies>Intellect Save</Proficiencies>
+    <Proficiencies>Wisdom Save</Proficiencies>
 
 
-    <item name="Spell">Cure Wounds</item>
-    <item name="Spell">Guiding Bolt</item>
+    <Spell>Magic Misslie</Spell>
+    <Spell>Color Spray</Spell>
+    <Spell>Identify</Spell>
 
-    <item name="Gear">Backpack</item>
-    <item name="gear">Warhammer</item>
+    <Gear>Backpack</Gear>
+    <Gear>Staff of Walking</Gear>
+
+
+    <Attack>Color Spray</Attack>
+    <Attack>Magic Missile</Attack>
+    <Attack>Guilding Bolt</Attack>
+    <Language>Common</Language>
+    <Language>Elvish</Language>
 
 </resources>

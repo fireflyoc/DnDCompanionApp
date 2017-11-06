@@ -1,10 +1,10 @@
 package edu.uco.noahgwilliamf.dndcompanionapp.Controls;
 
+import android.content.res.XmlResourceParser;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 
 import edu.uco.noahgwilliamf.dndcompanionapp.Models.PlayerCharacter;
@@ -17,26 +17,13 @@ public class XMLReader {
     private PlayerCharacter pc;
     private String text;
 
-    public PlayerCharacter readChar(String character) throws XmlPullParserException, IOException {
-        XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-        factory.setNamespaceAware(true);
-        XmlPullParser parser = factory.newPullParser();
+    public PlayerCharacter readChar(XmlResourceParser character) throws XmlPullParserException, IOException {
+        XmlResourceParser parser = character;
 
         pc = new PlayerCharacter();
 
-        switch (character) {
-            case "character1":
-                parser.setInput(new FileInputStream("character1.xml"), null);
-                break;
-            case "character2":
-                parser.setInput(new FileInputStream("character2.xml"), null);
-                break;
-            case "character3":
-                parser.setInput(new FileInputStream("character3.xml"), null);
-                break;
-        }
-
         int eventType = parser.getEventType();
+
         while(eventType != XmlPullParser.END_DOCUMENT){
             String tagname = parser.getName();
             switch (eventType) {
@@ -72,6 +59,16 @@ public class XMLReader {
                         pc.spellList.add(text);
                     } else if (tagname.equalsIgnoreCase("gear")) {
                         pc.itemList.add(text);
+                    } else if(tagname.equalsIgnoreCase("race")){
+                        pc.setRace(text);
+                    } else if(tagname.equalsIgnoreCase("class")){
+                        pc.setpClass(text);
+                    } else if(tagname.equalsIgnoreCase("attack")){
+                        pc.attackList.add(text);
+                    } else if(tagname.equalsIgnoreCase("language")){
+                        pc.languages.add(text);
+                    } else if(tagname.equalsIgnoreCase("tool")){
+                        pc.tools.add(text);
                     }
                     break;
                 default:

@@ -9,9 +9,9 @@ import java.util.ArrayList;
 public class PlayerCharacter {
 
 
-    private String name, hitDie;
+    private String name, hitDie, race, pClass;
     private int hp, maxHp, moveSpeed, baseAC, str, dex, con, wis, inte, cha, level;
-    public ArrayList<String> spellList, itemList, proficiencies;
+    public ArrayList<String> spellList, itemList, proficiencies, attackList, languages, tools;
 
     //stupid long constructor
     public PlayerCharacter(String name, int hp, int maxHp, int moveSpeed,
@@ -32,6 +32,9 @@ public class PlayerCharacter {
         itemList = new ArrayList<>();
         spellList = new ArrayList<>();
         proficiencies = new ArrayList<>();
+        attackList = new ArrayList<>();
+        languages = new ArrayList<>();
+        tools = new ArrayList<>();
     }
 
     //basic constructor
@@ -39,10 +42,10 @@ public class PlayerCharacter {
         itemList = new ArrayList<>();
         proficiencies = new ArrayList<>();
         spellList = new ArrayList<>();
+        attackList = new ArrayList<>();
+        languages = new ArrayList<>();
+        tools = new ArrayList<>();
     }
-
-    //TODO add in various methods to get derived stats
-
 
     //lots of encapsulation here
     public String getName() {
@@ -61,8 +64,24 @@ public class PlayerCharacter {
         return hitDie;
     }
 
+    public void setpClass(String c){
+        pClass = c;
+    }
+
+    public String getpClass(){
+        return pClass;
+    }
+
     public void setLevel(int l){
         level = l;
+    }
+
+    public void setRace(String r){
+        race=r;
+    }
+
+    public String getRace(){
+        return race;
     }
 
     public int getLevel(){
@@ -149,4 +168,12 @@ public class PlayerCharacter {
         this.cha = cha;
     }
 
+    public int getProfBonus() {
+        int i = 2;
+        if(level > 5) i++;
+        if(level > 9) i++;
+        if(level > 13) i++;
+        if(level > 17) i++;
+        return i;
+    }
 }//end class

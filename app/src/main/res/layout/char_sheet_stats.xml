@@ -69,7 +69,7 @@
                 android:layout_marginBottom="3dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/border"
-                android:text="Ability\n Scores:"
+                android:text="@string/ability_scores"
                 android:textAlignment="center"
                 android:textSize="16sp" />
 
@@ -94,6 +94,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:text="22"
+                    android:inputType="number"
                     android:textAlignment="center"
                     android:textSize="14sp" />
 
@@ -126,6 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:text="22"
+                    android:inputType="number"
                     android:textAlignment="center"
                     android:textSize="14sp" />
 
@@ -158,6 +160,7 @@
                     android:id="@+id/charConValue"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:inputType="number"
                     android:text="22"
                     android:textAlignment="center"
                     android:textSize="14sp" />
@@ -191,6 +194,7 @@
                     android:id="@+id/charIntValue"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:inputType="number"
                     android:text="22"
                     android:textAlignment="center"
                     android:textSize="14sp" />
@@ -224,6 +228,7 @@
                     android:id="@+id/charWisValue"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:inputType="number"
                     android:text="22"
                     android:textAlignment="center"
                     android:textSize="14dp" />
@@ -256,6 +261,7 @@
                 <EditText
                     android:id="@+id/charChaValue"
                     android:layout_width="match_parent"
+                    android:inputType="number"
                     android:layout_height="35dp"
                     android:text="22"
                     android:textAlignment="center"
@@ -323,37 +329,17 @@
             android:layout_below="@id/line1"
             android:orientation="vertical">
 
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/charListSpinner"/>
+
             <ListView
-                android:id="@+id/charSkillsProf"
+                android:id="@+id/charList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="@drawable/border_thick"
-                android:choiceMode="singleChoice" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:id="@+id/charSkillsExpand"/>
-            <ListView
-                android:id="@+id/charaAttacks"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/border_thick"
-                android:choiceMode="singleChoice" />
-            <ListView
-                android:id="@+id/charaEquips"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/border_thick"
-                android:choiceMode="singleChoice" />
-            <ListView
-                android:id="@+id/charaOtherProf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_below="@id/charListSpinner"
                 android:background="@drawable/border_thick"
                 android:choiceMode="singleChoice" />
         </RelativeLayout>

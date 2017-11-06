@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="Class">Cleric</item>
+    <class>Barbarian</class>
 
-    <item name="Str">10</item>
-    <item name="Dex">10</item>
-    <item name="Con">10</item>
-    <item name="Wis">10</item>
-    <item name="Int">10</item>
-    <item name="Cha">10</item>
-    <item name="Armor_Class">19</item>
-    <item name="Speed">35</item>
-    <item name="Hit_Die">d8</item>
-    <item name="Name">Charlie</item>
-    <item name="Level">1</item>
+    <Str>18</Str>
+    <Dex>12</Dex>
+    <Con>14</Con>
+    <Wis>8</Wis>
+    <Int>6</Int>
+    <Cha>6</Cha>
+    <Armor_Class>13</Armor_Class>
+    <Speed>30</Speed>
+    <Hit_Die>d12</Hit_Die>
+    <Name>Bob</Name>
+    <Level>1</Level>
+    <Race>Half-Orc</Race>
 
-    <item name="Proficiencies">Athletics</item>
-    <item name="Proficiencies">Insight</item>
-    <item name="Proficiencies">Religion</item>
-    <item name="Proficiencies">Perception</item>
-    <item name="Proficiencies">Charisma</item>
-    <item name="Proficiencies">Wisdom</item>
-    <item name="Proficiencies">All Weapons</item>
-    <item name="Proficiencies">All Armor</item>
-    <item name="Proficiencies">Medicine Kit</item>
+    <Proficiencies>Athletics</Proficiencies>
+    <Proficiencies>Nature</Proficiencies>
+    <Proficiencies>Survival</Proficiencies>
+    <Proficiencies>Intimidation</Proficiencies>
+    <Proficiencies>Strength Save</Proficiencies>
+    <Proficiencies>Constitution Save</Proficiencies>
+    <Proficiencies>All Weapons</Proficiencies>
 
 
-    <item name="Spell">Cure Wounds</item>
-    <item name="Spell">Guiding Bolt</item>
+    <Gear>Backpack</Gear>
+    <Gear>Warhammer</Gear>
+    <Gear>Vicious Greataxe</Gear>
 
-    <item name="Gear">Backpack</item>
-    <item name="gear">Warhammer</item>
+    <Attack>Warhammer 1h</Attack>
+    <Attack>Warhammer 2h</Attack>
+    <Attack>Greataxe 1h</Attack>
+    <Attack>Greataxe 2h</Attack>
+    <Language>Common</Language>
+    <Language>Orcish</Language>
 
 </resources>

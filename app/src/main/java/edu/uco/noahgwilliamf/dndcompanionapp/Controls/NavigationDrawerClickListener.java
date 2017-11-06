@@ -76,9 +76,9 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
 
     //todo finish this
     private void readCharactersFile() {
-        characterList.add("Bob the Barb");
-        characterList.add("Cathy the Cleric");
-        characterList.add("TurdMuffin the Gnome Rogue");
+        characterList.add("Charlie the Cleric");
+        characterList.add("Gandalf the Wizard");
+        characterList.add("Bob the Barbarian");
     }
 
     @Override
@@ -111,7 +111,7 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
             System.out.println("pushed Character");
             Intent i = new Intent(c,CharSheetActivity.class);
             for(int j=0; j<characterList.size();j++){
-                if(selection.equals(characterList.get(0))){
+                if(selection.equals(characterList.get(j))){
                     i.putExtra("CharNum", j);
                     c.startActivity(i);
                 }

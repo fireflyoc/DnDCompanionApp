@@ -7,11 +7,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.JSONSpellListReader;
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.NavigationDrawerClickListener;
@@ -31,7 +33,8 @@ public class DnDResourceLookUpActivity extends Activity {
     private ListView menuList;
     private ImageButton menuButton;
     private NavigationDrawerClickListener navi;
-    private ArrayList<DnDLookUpResource> resourceList;
+    private ArrayList<DnDSpell> spellList;
+    private SpellListViewArrayAdapter spellAdapter;
 
 
     private Intent intent;
@@ -42,12 +45,17 @@ public class DnDResourceLookUpActivity extends Activity {
         super.onCreate(savedInstanceState);
         intent = getIntent();
 
+        spellList = new ArrayList<>();
+
         if (intent.getStringExtra("resource").equalsIgnoreCase("spell")) {
             setContentView(R.layout.resource_spelllookup_activity);
+
             setUpSpellList();
+
         } else {
             System.err.println("Couldn't set contentView xml, no matching intent string");
         }
+
 
         setUpNavi();
 
@@ -68,26 +76,58 @@ public class DnDResourceLookUpActivity extends Activity {
         resourceList.add(new DnDSpell("Cure Minor Wounds","Touch Target gains 1d4 hp",DnDSpell.NECORMANCY,0, page, material, ritual, duration, concentration, castTime, level, school, classes));
         */
 
+        spellList = JSONSpellListReader.getSpellList();
 
-
-
-       final ArrayList<DnDSpell> spellList = JSONSpellListReader.getSpellList();
 
         final ListView spellListView = (ListView) findViewById(R.id.spell_lookup_spellListView);
-        spellListView.setAdapter(new SpellListViewArrayAdapter(this, spellList));
+
+        spellAdapter = new SpellListViewArrayAdapter(this, spellList);
+
+        spellListView.setAdapter(spellAdapter);
 
         spellListView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getApplicationContext(), "spell: " + spellList.get(i).getName(), Toast.LENGTH_LONG).show();
-                ;
+
 
             }
 
         });
 
+        Button sortByNameButton = (Button) findViewById(R.id.spell_lookup_sortByAlpha);
+        Button sortByLevelButton = (Button) findViewById(R.id.spell_lookup_sortByLevel);
+
+        sortByNameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sortSpellsAlphabetically(spellAdapter);
+            }
+        });
+
+        sortByLevelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sortSpellsbyLevel(spellAdapter);
+            }
+        });
+
 
     } //end setUpSpellList
+
+
+    private void sortSpellsAlphabetically(SpellListViewArrayAdapter adapter) {
+
+        Collections.sort(spellList);
+
+        adapter.notifyDataSetChanged();
+    }
+
+    private void sortSpellsbyLevel(SpellListViewArrayAdapter adapter) {
+
+        Collections.sort(spellList, new DnDSpell());
+        adapter.notifyDataSetChanged();
+    }
 
     //scaffolding method used during development
     private ArrayList<DnDSpell> convertToSpellList(ArrayList<DnDLookUpResource> resourceList) {

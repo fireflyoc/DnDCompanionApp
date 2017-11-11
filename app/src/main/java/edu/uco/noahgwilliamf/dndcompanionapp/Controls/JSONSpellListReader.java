@@ -26,7 +26,7 @@ import edu.uco.noahgwilliamf.dndcompanionapp.R;
 public class JSONSpellListReader extends AsyncTask<Void, Void, Void> {
 
     //im ok with this being a class-level variable, its only set up once-at the weloome screen
-    private  static  ArrayList<DnDSpell> spellList;
+    private static ArrayList<DnDSpell> spellList;
     private Resources res;
 
 
@@ -67,13 +67,15 @@ public class JSONSpellListReader extends AsyncTask<Void, Void, Void> {
             JSONArray spells = jsonObject.getJSONArray("spells");
             for (int i = 0; i < spells.length(); i++) {
                 JSONObject thisSpell = spells.getJSONObject(i);
-                System.out.println("adding new spell: " + thisSpell.getString("name") + " to the list");
+                System.out.println("adding new spell: " + thisSpell.getString("name") +
+                        " Level : " + thisSpell.getString("level") +" to the list");
 
-                             DnDSpell newSpell = new DnDSpell(thisSpell.getString("name"), thisSpell.getString("desc"),
-                        thisSpell.getString("page"), thisSpell.getString("range"), thisSpell.getString("components"),
-                        thisSpell.getString("ritual"), thisSpell.getString("duration"),
-                        thisSpell.getString("concentration"), thisSpell.getString("casting_time"),
-                        thisSpell.getString("level"), thisSpell.getString("school"), thisSpell.getString("class"));
+                DnDSpell newSpell = new DnDSpell(thisSpell.getString("name"), thisSpell.getString("desc"),
+                        thisSpell.getString("page"), thisSpell.getString("range"),
+                        thisSpell.getString("components"), thisSpell.getString("ritual"),
+                        thisSpell.getString("duration"), thisSpell.getString("concentration"),
+                        thisSpell.getString("casting_time"), thisSpell.getString("level"),
+                        thisSpell.getString("school"), thisSpell.getString("class"));
 
                 try {
                     newSpell.setMaterial(thisSpell.getString("material"));
@@ -93,7 +95,7 @@ public class JSONSpellListReader extends AsyncTask<Void, Void, Void> {
 
     }
 
-    public  static  ArrayList<DnDSpell> getSpellList() {
+    public static ArrayList<DnDSpell> getSpellList() {
         return spellList;
     }
 

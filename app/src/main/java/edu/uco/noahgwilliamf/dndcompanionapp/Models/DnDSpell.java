@@ -1,10 +1,14 @@
 package edu.uco.noahgwilliamf.dndcompanionapp.Models;
 
+import android.support.annotation.NonNull;
+
+import java.util.Comparator;
+
 /**
  * Created by Decker on 10/30/2017.
  */
 
-public class DnDSpell extends DnDLookUpResource {
+public class DnDSpell extends DnDLookUpResource implements Comparator<DnDSpell>, Comparable<DnDSpell> {
 
     private String page;
     private String range;
@@ -19,9 +23,18 @@ public class DnDSpell extends DnDLookUpResource {
     private String classes;
 
 
-    public DnDSpell(String name, String description, String page, String range,
-                    String components, String ritual, String duration,
-                    String concentration, String castTime, String level, String school, String classes) {
+    //empty constructor for comparator
+    public DnDSpell(){
+        super();
+    };
+
+
+    public DnDSpell(String name, String description,
+                    String page, String range,
+                    String components, String ritual,
+                    String duration, String concentration,
+                    String castTime, String level,
+                    String school, String classes) {
         super(name, description);
         this.setPage(page);
         this.setRange(range);
@@ -33,6 +46,7 @@ public class DnDSpell extends DnDLookUpResource {
         this.setLevel(level);
         this.setSchool(school);
         this.setClasses(classes);
+        System.out.println("New SPell: " +getName() + " level: " + getLevelNumeric()+" added");
     }
 
     public String getPage() {
@@ -104,6 +118,11 @@ public class DnDSpell extends DnDLookUpResource {
         return level;
     }
 
+    public int getLevelNumeric(){
+
+        return (getLevel().equalsIgnoreCase("cantrip"))? 0 : Integer.parseInt(getLevel());
+    }
+
     public void setLevel(String level) {
         if (level.equalsIgnoreCase("cantrip")){
             this.level = level;
@@ -127,5 +146,16 @@ public class DnDSpell extends DnDLookUpResource {
 
     public void setClasses(String classes) {
         this.classes = classes;
+    }
+
+    //overrind the compareTo method to sort by name
+    @Override
+    public int compareTo(@NonNull DnDSpell epell) {
+        return (this.getName()).compareTo(epell.getName());
+    }
+
+    @Override
+    public int compare(DnDSpell spell1, DnDSpell spell2) {
+        return spell1.getLevelNumeric() - spell2.getLevelNumeric();
     }
 } //end DnDSpell

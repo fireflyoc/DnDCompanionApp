@@ -48,6 +48,11 @@ public class SpellListViewArrayAdapter extends ArrayAdapter<DnDSpell> {
         return convertView;
     }
 
+    @Override
+    public void notifyDataSetChanged() {
+        //do your sorting here
+        System.out.println("Notify was called!!!!!!!!");
+        super.notifyDataSetChanged();
+    }
 
-
-} //end SpellListViewArrayAdapter
+ } //end SpellListViewArrayAdapter

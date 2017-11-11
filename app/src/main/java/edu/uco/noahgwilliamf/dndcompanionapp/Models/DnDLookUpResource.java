@@ -11,6 +11,11 @@ public class DnDLookUpResource {
     private String name;
     private String description;
 
+    //emptConstructor for comparator
+    public  DnDLookUpResource(){
+
+    }
+
     public DnDLookUpResource(String name, String description){
         this.setName(name);
         this.setDescription(description);

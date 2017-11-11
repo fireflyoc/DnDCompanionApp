@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
+import edu.uco.noahgwilliamf.dndcompanionapp.Controls.JSONSpellListReader;
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.NavigationDrawerClickListener;
 import edu.uco.noahgwilliamf.dndcompanionapp.R;
 
@@ -38,9 +39,20 @@ public class WelcomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 drawer.openDrawer(Gravity.LEFT);
+
+
             }
         });
 
+        //called here at the splash screen cuz its a long function, gives it time to complete
+        //before the user can see it
+        setUpSpellList();
+}
+
+    private void setUpSpellList() {
+
+        JSONSpellListReader spellListReader = new JSONSpellListReader(getResources());
+        spellListReader.execute();
     }
 
     @Override

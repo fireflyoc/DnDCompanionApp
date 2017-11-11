@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import edu.uco.noahgwilliamf.dndcompanionapp.Controls.JSONSpellListReader;
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.NavigationDrawerClickListener;
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.SpellListViewArrayAdapter;
 import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDLookUpResource;
@@ -59,29 +60,43 @@ public class DnDResourceLookUpActivity extends Activity {
     }
 
     private void setUpSpellList() {
-        resourceList = new ArrayList<>();
-        //dummy data for display
-        resourceList.add(new DnDSpell("Magic Missle","Shoot a Bolt of Magic at a Target",DnDSpell.EVOCATION,1));
-        resourceList.add(new DnDSpell("Mage Armor","Gain +2 Deflection AC",DnDSpell.ABJURATION,2));
-        resourceList.add(new DnDSpell("True Strike","Gain +20 to Attack Roll",DnDSpell.DIVINATION,0));
-        resourceList.add(new DnDSpell("Cure Minor Wounds","Touch Target gains 1d4 hp",DnDSpell.NECORMANCY,0));
+       /* resourceList = new ArrayList<>();
+      //dummy data for display
+        resourceList.add(new DnDSpell("Magic Missle","Shoot a Bolt of Magic at a Target",DnDSpell.EVOCATION,1, page, material, ritual, duration, concentration, castTime, level, school, classes));
+        resourceList.add(new DnDSpell("Mage Armor","Gain +2 Deflection AC",DnDSpell.ABJURATION,2, page, material, ritual, duration, concentration, castTime, level, school, classes));
+        resourceList.add(new DnDSpell("True Strike","Gain +20 to Attack Roll",DnDSpell.DIVINATION,0, page, material, ritual, duration, concentration, castTime, level, school, classes));
+        resourceList.add(new DnDSpell("Cure Minor Wounds","Touch Target gains 1d4 hp",DnDSpell.NECORMANCY,0, page, material, ritual, duration, concentration, castTime, level, school, classes));
+        */
+
+
+
+
+       final ArrayList<DnDSpell> spellList = JSONSpellListReader.getSpellList();
 
         final ListView spellListView = (ListView) findViewById(R.id.spell_lookup_spellListView);
-        spellListView.setAdapter(new SpellListViewArrayAdapter(this,resourceList));
+        spellListView.setAdapter(new SpellListViewArrayAdapter(this, spellList));
 
         spellListView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-               Toast.makeText(getApplicationContext(), "spell: " + resourceList.get(i).getName(), Toast.LENGTH_LONG).show();;
+                Toast.makeText(getApplicationContext(), "spell: " + spellList.get(i).getName(), Toast.LENGTH_LONG).show();
+                ;
 
             }
 
         });
 
 
-
     } //end setUpSpellList
 
+    //scaffolding method used during development
+    private ArrayList<DnDSpell> convertToSpellList(ArrayList<DnDLookUpResource> resourceList) {
+        ArrayList<DnDSpell> returnArray = new ArrayList<>();
+        for (DnDLookUpResource d : resourceList) {
+            returnArray.add((DnDSpell) d);
+        }
+        return returnArray;
+    }
 
 
     private void setUpNavi() {

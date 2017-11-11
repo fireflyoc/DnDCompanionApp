@@ -81,20 +81,22 @@
             </TableRow>
 
             <TableRow
+                android:layout_margin="5sp"
                 android:background="@drawable/border_thick">
 
                 <TextView
                     android:gravity="center_vertical"
                     android:layout_height="45sp"
                     android:layout_marginLeft="15sp"
-                    android:text="Level"
+                    android:text="Name"
                     android:textSize="25sp" />
 
                 <TextView
-                    android:layout_height="45sp"
-                    android:layout_marginRight="15sp"
+
+                    android:layout_height="40sp"
+                    android:layout_marginRight="20sp"
                     android:gravity="right"
-                    android:text="School"
+                    android:text="Level"
                     android:textSize="25sp" />
 
             </TableRow>

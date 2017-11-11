@@ -8,6 +8,10 @@
     <string name="CHA">CHA</string>
     <string name="ability_scores">Ability\nScores</string>
 
+    <string name="spellListURL">https://dl.dropboxusercontent.com/s/wneq3reu80vdlkb/spellData.json</string>
+
+
+
     <array name="menu">
         <item>Spell List</item>
         <item>Feats List</item>

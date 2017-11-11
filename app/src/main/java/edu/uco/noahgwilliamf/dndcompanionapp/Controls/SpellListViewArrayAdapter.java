@@ -17,42 +17,37 @@ import edu.uco.noahgwilliamf.dndcompanionapp.R;
  * Created by Decker on 10/30/2017.
  */
 
-public class SpellListViewArrayAdapter extends ArrayAdapter<DnDLookUpResource> {
-
-    private final Context context;
-    private ArrayList<DnDSpell> spellList;
+public class SpellListViewArrayAdapter extends ArrayAdapter<DnDSpell> {
 
 
-    public SpellListViewArrayAdapter(Context context, ArrayList<DnDLookUpResource> spellList) {
+
+
+
+    public SpellListViewArrayAdapter(Context context, ArrayList<DnDSpell> spellList) {
         super(context, -1, spellList);
-        this.context = context;
-        spellList = new ArrayList<>();
-       this.setSpellList(spellList);
     } //contructor
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.spell_row_listview_layout, parent, false);
 
+       //get the item
+        DnDSpell spell = getItem(position);
 
-        TextView spellNameTextView = (TextView) rowView.findViewById(R.id.spell_name);
-        TextView spellLevelTextView = (TextView) rowView.findViewById(R.id.spell_Level);
-        spellNameTextView.setText(spellList.get(position).getName());
-        if(spellList.get(position).getLevel()==0){
-            spellLevelTextView.setText("Cantrips");
-        }else{
-            spellLevelTextView.setText(spellList.get(position).getLevel());
+        //check to see if the current vew is begin reused, if not, inflate it
+
+        if(convertView == null){
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.spell_row_listview_layout,parent,false);
         }
 
-        return rowView;
+        TextView spellNameTextView = (TextView) convertView.findViewById(R.id.spell_name);
+        TextView spellLevelTextView = (TextView) convertView.findViewById(R.id.spell_level);
+
+        spellNameTextView.setText(spell.getName());
+        spellLevelTextView.setText(spell.getLevel());
+
+        return convertView;
     }
 
 
-    public void setSpellList(ArrayList<DnDLookUpResource> spellList) {
-        for(DnDLookUpResource d: spellList){
-            spellList.add(d);
-        }
-    }
+
 } //end SpellListViewArrayAdapter

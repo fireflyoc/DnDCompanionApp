@@ -6,52 +6,126 @@ package edu.uco.noahgwilliamf.dndcompanionapp.Models;
 
 public class DnDSpell extends DnDLookUpResource {
 
-    private int school;
-    private int level;
-    public final static int EVOCATION = 0;
-    public final static int ABJURATION = 1;
-    public final static int DIVINATION= 2;
-    public final static int NECORMANCY= 3;
+    private String page;
+    private String range;
+    private String components;
+    private String material;
+    private String ritual;
+    private String duration;
+    private String concentration;
+    private String castTime;
+    private String level;
+    private String school;
+    private String classes;
 
-    public DnDSpell(String name,  String description, int school, int level) {
+
+    public DnDSpell(String name, String description, String page, String range,
+                    String components, String ritual, String duration,
+                    String concentration, String castTime, String level, String school, String classes) {
         super(name, description);
+        this.setPage(page);
+        this.setRange(range);
+        this.setComponents(components);
+         this.setRitual(ritual);
+        this.setDuration(duration);
+        this.setConcentration(concentration);
+        this.setCastTime(castTime);
         this.setLevel(level);
         this.setSchool(school);
-    } //end DnDSpell
+        this.setClasses(classes);
+    }
 
-    public String getSchoolNameString() {
+    public String getPage() {
+        return page;
+    }
 
-        switch (school) {
+    public void setPage(String page) {
+        this.page = page;
+    }
 
-            case EVOCATION:
-                return "Evocation";
-            case ABJURATION:
-                return "Abjuration";
-            case DIVINATION:
-                return "Divination";
-            case NECORMANCY:
-                return "Necromancy";
+    public String getRange() {
+        return range;
+    }
 
-            default:
-                return "some school";
+    public void setRange(String range) {
+        this.range = range;
+    }
 
+    public String getComponents() {
+        return components;
+    }
+
+    public void setComponents(String components) {
+        this.components = components;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public String getRitual() {
+        return ritual;
+    }
+
+    public void setRitual(String ritual) {
+        this.ritual = ritual;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getConcentration() {
+        return concentration;
+    }
+
+    public void setConcentration(String concentration) {
+        this.concentration = concentration;
+    }
+
+    public String getCastTime() {
+        return castTime;
+    }
+
+    public void setCastTime(String castTime) {
+        this.castTime = castTime;
+    }
+
+    public String getLevel() {
+
+        return level;
+    }
+
+    public void setLevel(String level) {
+        if (level.equalsIgnoreCase("cantrip")){
+            this.level = level;
+        }else{
+            this.level = level.charAt(0) +"";
         }
 
     }
 
-    public int getSchool() {
+    public String getSchool() {
         return school;
     }
 
-    public void setSchool(int school) {
+    public void setSchool(String school) {
         this.school = school;
     }
 
-    public int getLevel() {
-        return level;
+    public String getClasses() {
+        return classes;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void setClasses(String classes) {
+        this.classes = classes;
     }
 } //end DnDSpell

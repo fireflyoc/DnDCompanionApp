@@ -21,7 +21,7 @@ import edu.uco.noahgwilliamf.dndcompanionapp.R;
  * Created by Decker on 10/30/2017.
  */
 
-public class SpellListViewArrayAdapter extends ArrayAdapter<DnDSpell> implements Filterable {
+public class SpellListViewArrayAdapter extends ArrayAdapter<DnDSpell> {
 
 
     private ArrayList<DnDSpell> spellList;
@@ -60,84 +60,11 @@ public class SpellListViewArrayAdapter extends ArrayAdapter<DnDSpell> implements
 
 
         System.out.println("spelllIst count: " + spellList.size());
-    
+
 
         System.out.println("Notify was called!!!!!!!!");
         super.notifyDataSetChanged();
     }
 
-    @Override
-    public Filter getFilter() {
-
-        Filter filter = new Filter() {
-
-            @SuppressWarnings("unchecked")
-            @Override
-            protected void publishResults(CharSequence constraint, FilterResults results) {
-
-                spellList = (ArrayList<DnDSpell>) results.values;
-                notifyDataSetChanged();
-            }
-
-            @Override
-            protected FilterResults performFiltering(CharSequence constraint) {
-
-                FilterResults results = new FilterResults();
-                ArrayList<String> FilteredArrayNames = new ArrayList<String>();
-
-                // perform your search here using the searchConstraint String.
-
-                constraint = constraint.toString().toLowerCase();
-                for (int i = 0; i < getCount(); i++) {
-                    String dataNames = getItem(i).getName();
-                    if (dataNames.toLowerCase().startsWith(constraint.toString())) {
-                        FilteredArrayNames.add(dataNames);
-                    }
-                }
-
-                results.count = FilteredArrayNames.size();
-                results.values = FilteredArrayNames;
-                Log.e("VALUES", results.values.toString());
-
-                return results;
-            }
-        };
-
-        return filter;
-    }
-
-
-   /* private class SpellFilter extends Filter {
-
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-
-
-            FilterResults results = new FilterResults();
-            if (constraint == null || constraint.length() == 0) {
-                for (int i = 0; i <getCount() ; i++) {
-                    results.
-                }
-            } else {
-                ArrayList<DnDSpell> filteredSpells = new ArrayList<>():
-                for (DnDSpell s : localList) {
-                    if (s.getName().toLowerCase().contains((constraint.toString().toLowerCase()))) {
-                        filteredSpells.add(s);
-                    }
-                }
-
-                results.count = filteredSpells.size();
-                results.values = filteredSpells;
-            }
-
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-
-
-        }
-    }*/
 
 } //end SpellListViewArrayAdapter

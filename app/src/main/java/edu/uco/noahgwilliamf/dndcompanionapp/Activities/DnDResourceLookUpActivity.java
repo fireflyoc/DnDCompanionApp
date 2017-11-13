@@ -36,6 +36,7 @@ public class DnDResourceLookUpActivity extends Activity {
     private ImageButton menuButton;
     private NavigationDrawerClickListener navi;
     private ArrayList<DnDSpell> spellList;
+
     private SpellListViewArrayAdapter spellAdapter;
     private android.app.FragmentManager fm;
 
@@ -81,7 +82,9 @@ public class DnDResourceLookUpActivity extends Activity {
         resourceList.add(new DnDSpell("Cure Minor Wounds","Touch Target gains 1d4 hp",DnDSpell.NECORMANCY,0, page, material, ritual, duration, concentration, castTime, level, school, classes));
         */
 
-        spellList = JSONSpellListReader.getSpellList();
+        spellList = new ArrayList<>();
+   resetSpellList();;
+        //   spellList = JSONSpellListReader.getSpellList();
 
 
         final ListView spellListView = (ListView) findViewById(R.id.spell_lookup_spellListView);
@@ -136,42 +139,50 @@ public class DnDResourceLookUpActivity extends Activity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                System.out.println("TEXT CHANGED! :" + editable.toString());
-                spellAdapter.getFilter().filter(editable.toString());
+
+                if (editable.length() == 0) {
+                resetSpellList();
+                } else {
+                    filter(editable.toString());
+
+                }
+                spellAdapter.notifyDataSetChanged();
             }
         });
-
 
 
     } //end setUpSpellList
 
 
-    public void onUserSelectSearchValue(String querry) {
-
-        if (querry.equalsIgnoreCase("")) {
-
+    private void resetSpellList(){
+        for (DnDSpell S : JSONSpellListReader.getSpellList()) {
+            spellList.add(S);
         }
-        spellAdapter.notifyDataSetChanged();
 
     }
 
-    private void enableAllSpells() {
-        for (DnDSpell s : spellList) {
-            s.setEnabled(true);
-        }
-        spellAdapter.notifyDataSetChanged();
-    }
+    private void filter(String filter) {
 
+        if (filter.length() > 0) {
+
+            spellList.clear();
+            for (DnDSpell s : JSONSpellListReader.getSpellList()) {
+                if (s.getName().toLowerCase().contains(filter)) {
+                    spellList.add(s);
+                }
+            }
+            spellAdapter.notifyDataSetChanged();
+        }
+    }
 
     private void sortSpellsAlphabetically(SpellListViewArrayAdapter adapter) {
 
-        enableAllSpells();
         Collections.sort(spellList);
         adapter.notifyDataSetChanged();
     }
 
     private void sortSpellsbyLevel(SpellListViewArrayAdapter adapter) {
-        enableAllSpells();
+
         Collections.sort(spellList, new DnDSpell());
         adapter.notifyDataSetChanged();
     }

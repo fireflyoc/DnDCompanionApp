@@ -4,13 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,6 +37,7 @@ public class DnDResourceLookUpActivity extends Activity {
     private NavigationDrawerClickListener navi;
     private ArrayList<DnDSpell> spellList;
     private SpellListViewArrayAdapter spellAdapter;
+    private android.app.FragmentManager fm;
 
 
     private Intent intent;
@@ -44,6 +47,8 @@ public class DnDResourceLookUpActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         intent = getIntent();
+
+        fm = getFragmentManager();
 
         spellList = new ArrayList<>();
 
@@ -88,7 +93,11 @@ public class DnDResourceLookUpActivity extends Activity {
         spellListView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), "spell: " + spellList.get(i).getName(), Toast.LENGTH_LONG).show();
+                //todo show dialog fragment
+                //Toast.makeText(getApplicationContext(), "spell: " + spellList.get(i).getName(), Toast.LENGTH_LONG).show();
+                DnDResourceDialogFragment frag = DnDResourceDialogFragment.newInstance(spellList.get(i).getName(),
+                        spellList.get(i).getDescription(), spellList.get(i).getDetails());
+                frag.show(fm, "spell_detials_fragment");
 
 
             }
@@ -97,6 +106,7 @@ public class DnDResourceLookUpActivity extends Activity {
 
         Button sortByNameButton = (Button) findViewById(R.id.spell_lookup_sortByAlpha);
         Button sortByLevelButton = (Button) findViewById(R.id.spell_lookup_sortByLevel);
+        final EditText searchInput = (EditText) findViewById(R.id.spell_lookup_searchInput);
 
         sortByNameButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,18 +123,55 @@ public class DnDResourceLookUpActivity extends Activity {
         });
 
 
+        searchInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                System.out.println("TEXT CHANGED! :" + editable.toString());
+                spellAdapter.getFilter().filter(editable.toString());
+            }
+        });
+
+
+
     } //end setUpSpellList
+
+
+    public void onUserSelectSearchValue(String querry) {
+
+        if (querry.equalsIgnoreCase("")) {
+
+        }
+        spellAdapter.notifyDataSetChanged();
+
+    }
+
+    private void enableAllSpells() {
+        for (DnDSpell s : spellList) {
+            s.setEnabled(true);
+        }
+        spellAdapter.notifyDataSetChanged();
+    }
 
 
     private void sortSpellsAlphabetically(SpellListViewArrayAdapter adapter) {
 
+        enableAllSpells();
         Collections.sort(spellList);
-
         adapter.notifyDataSetChanged();
     }
 
     private void sortSpellsbyLevel(SpellListViewArrayAdapter adapter) {
-
+        enableAllSpells();
         Collections.sort(spellList, new DnDSpell());
         adapter.notifyDataSetChanged();
     }

@@ -21,6 +21,7 @@ public class DnDSpell extends DnDLookUpResource implements Comparator<DnDSpell>,
     private String level;
     private String school;
     private String classes;
+    private boolean enabled;
 
 
     //empty constructor for comparator
@@ -47,6 +48,7 @@ public class DnDSpell extends DnDLookUpResource implements Comparator<DnDSpell>,
         this.setSchool(school);
         this.setClasses(classes);
         System.out.println("New SPell: " +getName() + " level: " + getLevelNumeric()+" added");
+        this.setEnabled(true);
     }
 
     public String getPage() {
@@ -148,6 +150,25 @@ public class DnDSpell extends DnDLookUpResource implements Comparator<DnDSpell>,
         this.classes = classes;
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getDetails(){
+
+        return "Page: " + getPage() +"\n"+
+                "Components: " + getComponents() +"\n" +
+                (((getMaterial())!=null)? "Materials: " +getMaterial()+"\n" :"")+
+                "Ritual: " + getRitual()+ " | Duration: " + getDuration() +
+                "\nConcentration: " + getConcentration() +"\n"+
+                "Casting time: " + getCastTime() + " | level: " + getLevelNumeric() +"\nSchool: "
+                +getSchool() +"\n"+ "Classes: " +getClasses();
+    }
+
     //overrind the compareTo method to sort by name
     @Override
     public int compareTo(@NonNull DnDSpell epell) {
@@ -158,4 +179,6 @@ public class DnDSpell extends DnDLookUpResource implements Comparator<DnDSpell>,
     public int compare(DnDSpell spell1, DnDSpell spell2) {
         return spell1.getLevelNumeric() - spell2.getLevelNumeric();
     }
+
+
 } //end DnDSpell

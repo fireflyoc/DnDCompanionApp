@@ -80,6 +80,7 @@ public class JSONSpellListReader extends AsyncTask<Void, Void, Void> {
                 try {
                     newSpell.setMaterial(thisSpell.getString("material"));
                 } catch (JSONException e) {
+                   // newSpell.setEnabled(false);
                     e.printStackTrace();
 
                 }

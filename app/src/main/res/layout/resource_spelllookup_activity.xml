@@ -33,15 +33,16 @@
             android:textAlignment="center"
             android:textSize="35dp" />
 
-        <Button
+        <EditText
 
-            android:id="@+id/spell_lookup_searhButton"
+            android:id="@+id/spell_lookup_searchInput"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/spell_lookup_titleText"
             android:background="@drawable/border"
-            android:text="Search"
+            android:text="@string/search_for"
+            android:lines="1"
             android:textAlignment="center"
             android:textSize="25sp" />
 
@@ -49,7 +50,7 @@
             android:id="@+id/spell_lookup_sortByLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/spell_lookup_searhButton"
+            android:layout_below="@+id/spell_lookup_searchInput"
             android:stretchColumns="*">
 
             <TableRow

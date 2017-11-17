@@ -39,7 +39,7 @@ public class CharSheetActivity extends Activity {
     private TextView charName, levelClassRace, strBonus, dexBonus, conBonus, intBonus, wisBonus, chaBonus, charAC, charHP, charSpeed;
     private EditText charStr, charDex, charCon, charInt, charWis, charCha;
     private Intent intent;
-    private static PlayerCharacter pc1 = null, pc2 = null, pc3 = null;
+    public static PlayerCharacter pc1 = null, pc2 = null, pc3 = null;
     private XMLReader reader;
     private Spinner listSpinner;
 
@@ -67,21 +67,12 @@ public class CharSheetActivity extends Activity {
     private void setUpChars() throws XmlPullParserException, IOException {
         switch (intent.getIntExtra("CharNum",0)) {
             case 0:
-                if (pc1 == null) {
-                    pc1 = reader.readChar(getResources().getXml(R.xml.character1));
-                }
                 setUpDisplay(pc1);
                 break;
             case 1:
-                if (pc2 == null) {
-                    pc2 = reader.readChar(getResources().getXml(R.xml.character2));
-                }
                 setUpDisplay(pc2);
                 break;
             case 2:
-                if (pc3 == null) {
-                    pc3 = reader.readChar(getResources().getXml(R.xml.character3));
-                }
                 setUpDisplay(pc3);
                 break;
             default:

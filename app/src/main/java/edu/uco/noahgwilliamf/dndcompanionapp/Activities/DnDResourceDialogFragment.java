@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.TextView;
 
 import edu.uco.noahgwilliamf.dndcompanionapp.R;
@@ -53,8 +52,7 @@ public class DnDResourceDialogFragment extends DialogFragment {
 
         // Show soft keyboard automatically and request focus to field
         nameOutput.requestFocus();
-        getDialog().getWindow().setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        //getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
 
 } //end class

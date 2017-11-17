@@ -40,6 +40,8 @@
             android:layout_height="55dp"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/spell_lookup_titleText"
+            android:inputType="textPersonName"
+            android:imeOptions="actionDone"
             android:background="@drawable/border"
             android:hint="@string/search_for"
             android:lines="1"

@@ -33,9 +33,9 @@
             android:layout_alignParentRight="true"
             android:layout_toRightOf="@+id/charSheetMenuButton"
             android:background="@drawable/border"
-            android:text="CHARACTER NAME"
+            android:text="@string/character_name"
             android:textAlignment="center"
-            android:textSize="25sp" />
+            android:textSize="25sp"/>
 
         <TextView
             android:id="@+id/charClassTextView"

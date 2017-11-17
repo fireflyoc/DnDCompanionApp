@@ -140,10 +140,13 @@ public class DnDResourceLookUpActivity extends Activity {
             @Override
             public void afterTextChanged(Editable editable) {
 
+                String s = editable.toString();
+                s.replace("\n", "");
+
                 if (editable.length() == 0) {
                 resetSpellList();
                 } else {
-                    filter(editable.toString());
+                    filter(editable.toString().trim());
 
                 }
                 spellAdapter.notifyDataSetChanged();
@@ -155,6 +158,7 @@ public class DnDResourceLookUpActivity extends Activity {
 
 
     private void resetSpellList(){
+        spellList.clear();
         for (DnDSpell S : JSONSpellListReader.getSpellList()) {
             spellList.add(S);
         }

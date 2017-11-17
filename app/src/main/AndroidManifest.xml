@@ -12,7 +12,9 @@
         <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.CharSheetActivity"
             android:windowSoftInputMode="stateHidden">
         </activity>
-        <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.DnDResourceLookUpActivity"></activity>
+        <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.DnDResourceLookUpActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
         <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.WelcomeScreen">
 
             <intent-filter>

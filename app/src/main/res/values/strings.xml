@@ -9,8 +9,63 @@
     <string name="ability_scores">Ability\nScores</string>
 
     <string name="search_for">Search For:</string>
+    <string name="new_character">New Character</string>
+    <string name="character_name">CHARACTER NAME</string>
+    <string name="race">Race:</string>
+    <string name="classes">Class:</string>
+    <string name="level">Level:</string>
+    <string name="name">Name:</string>
+    <string name="create">Create</string>
 
+    <array name="classTypes">
+        <item>Barbarian</item>
+        <item>Bard</item>
+        <item>Cleric</item>
+        <item>Druid</item>
+        <item>Fighter</item>
+        <item>Monk</item>
+        <item>Paladin</item>
+        <item>Ranger</item>
+        <item>Rogue</item>
+        <item>Sorcerer</item>
+        <item>Warlock</item>
+        <item>Wizard</item>
+    </array>
 
+    <array name="races">
+        <item>Dwarf</item>
+        <item>Elf</item>
+        <item>Half-Elf</item>
+        <item>Human</item>
+        <item>Half-Orc</item>
+        <item>Halfling</item>
+        <item>Tiefling</item>
+        <item>Gnome</item>
+        <item>Dragonborn</item>
+    </array>
+
+    <array name="levels">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </array>
     <array name="menu">
         <item>Spell List</item>
         <item>Feats List</item>

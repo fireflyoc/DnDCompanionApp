@@ -8,10 +8,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 import edu.uco.noahgwilliamf.dndcompanionapp.Activities.CharSheetActivity;
 import edu.uco.noahgwilliamf.dndcompanionapp.Activities.DnDResourceLookUpActivity;
+import edu.uco.noahgwilliamf.dndcompanionapp.Activities.charCreationActivity;
 import edu.uco.noahgwilliamf.dndcompanionapp.R;
 
 /**
@@ -27,6 +31,7 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
     private Resources res;
     private ArrayAdapter<String> listAdapter;
     private Context c;
+    private XMLReader reader;
     private static NavigationDrawerClickListener instance = null;
 
 
@@ -53,6 +58,7 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
             System.out.println("passed c was null");
         }
 
+        reader = new XMLReader();
         characterList = new ArrayList<>();
         optionsStringArray = buildOptions();
         options = res.getStringArray(R.array.menu);
@@ -74,11 +80,41 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
         return options.toArray(new String[options.size()]);
     }
 
-    //todo finish this
     private void readCharactersFile() {
-        characterList.add("Charlie the Cleric");
-        characterList.add("Gandalf the Wizard");
-        characterList.add("Bob the Barbarian");
+        String newChar = "New Character";
+        String[] files = c.fileList();
+        for(String s: files){
+            try {
+                if (s.equals("character1.xml")) {
+                    CharSheetActivity.pc1 = reader.readChar(res.getXml(R.xml.character1));
+                }
+                if(s.equals("character2.xml")){
+                    CharSheetActivity.pc2 = reader.readChar(res.getXml(R.xml.character2));
+                }
+                if(s.equals("character3.xml")){
+                    CharSheetActivity.pc3 = reader.readChar(res.getXml(R.xml.character3));
+                }
+            } catch (XmlPullParserException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        if(CharSheetActivity.pc1 !=null){
+            characterList.add(CharSheetActivity.pc1.getName());
+        } else{
+            characterList.add(newChar);
+        }
+        if(CharSheetActivity.pc2 != null){
+            characterList.add(CharSheetActivity.pc2.getName());
+        } else{
+            characterList.add(newChar);
+        }
+        if(CharSheetActivity.pc3 != null){
+            characterList.add(CharSheetActivity.pc3.getName());
+        } else{
+            characterList.add(newChar);
+        }
     }
 
     @Override
@@ -107,6 +143,16 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
         } else if (selection.equalsIgnoreCase(options[4])) {
             //dice
             System.out.println("pushed dice");
+        } else if(selection.equalsIgnoreCase("new character")){
+            Intent i = new Intent(c, charCreationActivity.class);
+            if(CharSheetActivity.pc1 == null){
+                i.putExtra("character", 1);
+            } else if(CharSheetActivity.pc2 == null){
+                i.putExtra("character", 2);
+            } else{
+                i.putExtra("character", 3);
+            }
+            c.startActivity(i);
         } else {
             System.out.println("pushed Character");
             Intent i = new Intent(c,CharSheetActivity.class);

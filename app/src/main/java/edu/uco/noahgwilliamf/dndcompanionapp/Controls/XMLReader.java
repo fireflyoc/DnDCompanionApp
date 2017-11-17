@@ -69,12 +69,20 @@ public class XMLReader {
                         pc.languages.add(text);
                     } else if(tagname.equalsIgnoreCase("tool")){
                         pc.tools.add(text);
+                    } else if(tagname.equalsIgnoreCase("hp")){
+                        pc.setHp(Integer.parseInt(text));
+                    } else if(tagname.equalsIgnoreCase("max_hp")){
+                        pc.setMaxHp(Integer.parseInt(text));
                     }
                     break;
                 default:
                     break;
             }
             eventType = parser.next();
+        }
+
+        if(pc.getpClass() == null){
+            pc = null;
         }
 
         return pc;

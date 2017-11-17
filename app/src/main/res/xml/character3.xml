@@ -1,38 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <class>Barbarian</class>
-
-    <Str>18</Str>
-    <Dex>12</Dex>
-    <Con>14</Con>
-    <Wis>8</Wis>
-    <Int>6</Int>
-    <Cha>6</Cha>
-    <Armor_Class>13</Armor_Class>
-    <Speed>30</Speed>
-    <Hit_Die>d12</Hit_Die>
-    <Name>Bob</Name>
-    <Level>1</Level>
-    <Race>Half-Orc</Race>
-
-    <Proficiencies>Athletics</Proficiencies>
-    <Proficiencies>Nature</Proficiencies>
-    <Proficiencies>Survival</Proficiencies>
-    <Proficiencies>Intimidation</Proficiencies>
-    <Proficiencies>Strength Save</Proficiencies>
-    <Proficiencies>Constitution Save</Proficiencies>
-    <Proficiencies>All Weapons</Proficiencies>
-
-
-    <Gear>Backpack</Gear>
-    <Gear>Warhammer</Gear>
-    <Gear>Vicious Greataxe</Gear>
-
-    <Attack>Warhammer 1h</Attack>
-    <Attack>Warhammer 2h</Attack>
-    <Attack>Greataxe 1h</Attack>
-    <Attack>Greataxe 2h</Attack>
-    <Language>Common</Language>
-    <Language>Orcish</Language>
 
 </resources>

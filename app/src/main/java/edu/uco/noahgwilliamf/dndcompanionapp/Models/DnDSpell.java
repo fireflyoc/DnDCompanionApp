@@ -47,7 +47,6 @@ public class DnDSpell extends DnDLookUpResource implements Comparator<DnDSpell>,
         this.setLevel(level);
         this.setSchool(school);
         this.setClasses(classes);
-        System.out.println("New SPell: " +getName() + " level: " + getLevelNumeric()+" added");
         this.setEnabled(true);
     }
 

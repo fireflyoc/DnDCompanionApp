@@ -4,16 +4,16 @@ import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDSpell;
 import edu.uco.noahgwilliamf.dndcompanionapp.R;
@@ -67,15 +67,12 @@ public class JSONSpellListReader extends AsyncTask<Void, Void, Void> {
             JSONArray spells = jsonObject.getJSONArray("spells");
             for (int i = 0; i < spells.length(); i++) {
                 JSONObject thisSpell = spells.getJSONObject(i);
-                System.out.println("adding new spell: " + thisSpell.getString("name") +
-                        " Level : " + thisSpell.getString("level") +" to the list");
-
                 DnDSpell newSpell = new DnDSpell(thisSpell.getString("name"), thisSpell.getString("desc"),
-                        thisSpell.getString("page"), thisSpell.getString("range"),
-                        thisSpell.getString("components"), thisSpell.getString("ritual"),
-                        thisSpell.getString("duration"), thisSpell.getString("concentration"),
-                        thisSpell.getString("casting_time"), thisSpell.getString("level"),
-                        thisSpell.getString("school"), thisSpell.getString("class"));
+                thisSpell.getString("page"), thisSpell.getString("range"),
+                thisSpell.getString("components"), thisSpell.getString("ritual"),
+                thisSpell.getString("duration"), thisSpell.getString("concentration"),
+                thisSpell.getString("casting_time"), thisSpell.getString("level"),
+                thisSpell.getString("school"), thisSpell.getString("class"));
 
                 try {
                     newSpell.setMaterial(thisSpell.getString("material"));

@@ -46,7 +46,7 @@ public class charCreationActivity extends Activity {
 
         Intent i = getIntent();
         writer = new XMLWriter(getApplicationContext());
-        charNum = Integer.parseInt(i.getStringExtra("character"));
+        charNum = i.getIntExtra("character",0);
 
         setUpNavi();
 
@@ -54,13 +54,15 @@ public class charCreationActivity extends Activity {
         classSpinner = (Spinner) findViewById(R.id.char_create_class_spinner);
         levelSpinner = (Spinner) findViewById(R.id.char_create_level_spinner);
 
-        ArrayAdapter<CharSequence> raceAdapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.races, R.layout.support_simple_spinner_dropdown_item);
-        raceAdapter.setDropDownViewResource(R.layout.char_spinner_item);
+        ArrayAdapter<CharSequence> raceAdapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.races, R.layout.char_spinner_item);
+        raceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         raceSpinner.setAdapter(raceAdapter);
         raceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                race = adapterView.getItemAtPosition(i).toString();
+                if(adapterView.getItemAtPosition(i)!=null){
+                    race = adapterView.getItemAtPosition(i)+"";
+                }
             }
 
             @Override
@@ -69,13 +71,15 @@ public class charCreationActivity extends Activity {
             }
         });
 
-        ArrayAdapter<CharSequence> classAdapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.classTypes, R.layout.support_simple_spinner_dropdown_item);
-        classAdapter.setDropDownViewResource(R.layout.char_spinner_item);
+        ArrayAdapter<CharSequence> classAdapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.classTypes, R.layout.char_spinner_item);
+        classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         classSpinner.setAdapter(raceAdapter);
         classSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                mClass = adapterView.getItemAtPosition(i).toString();
+                if(adapterView.getItemAtPosition(i)!=null){
+                    mClass = adapterView.getItemAtPosition(i)+"";
+                }
             }
 
             @Override
@@ -84,13 +88,15 @@ public class charCreationActivity extends Activity {
             }
         });
 
-        ArrayAdapter<CharSequence> levelAdapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.levels, R.layout.support_simple_spinner_dropdown_item);
-        levelAdapter.setDropDownViewResource(R.layout.char_spinner_item);
-        levelSpinner.setAdapter(raceAdapter);
+        ArrayAdapter<CharSequence> levelAdapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.levels, R.layout.char_spinner_item);
+        levelAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        levelSpinner.setAdapter(levelAdapter);
         levelSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                level = Integer.parseInt(adapterView.getItemAtPosition(i).toString());
+                if(adapterView.getItemAtPosition(i)!=null){
+                    level = Integer.parseInt(adapterView.getItemAtPosition(i)+"");
+                }
             }
 
             @Override
@@ -138,7 +144,11 @@ public class charCreationActivity extends Activity {
                 PlayerCharacter pc = new PlayerCharacter();
                 pc.setRace(race);
                 pc.setLevel(level);
-                pc.setName(name.getText().toString());
+                if(name.getText().toString()!=null){
+                    pc.setName(name.getText().toString());
+                } else{
+                    allGood=false;
+                }
                 pc.setpClass(mClass);
                 if (mClass.equalsIgnoreCase("sorcerer") || mClass.equalsIgnoreCase("wizard")) {
                     pc.setHitDie("d6");

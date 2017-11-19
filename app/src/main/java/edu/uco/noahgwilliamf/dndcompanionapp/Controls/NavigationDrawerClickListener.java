@@ -83,36 +83,31 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
     private void readCharactersFile() {
         String newChar = "New Character";
         String[] files = c.fileList();
-        for(String s: files){
-            try {
-                if (s.equals("character1.xml")) {
-                    CharSheetActivity.pc1 = reader.readChar(res.getXml(R.xml.character1));
-                }
-                if(s.equals("character2.xml")){
-                    CharSheetActivity.pc2 = reader.readChar(res.getXml(R.xml.character2));
-                }
-                if(s.equals("character3.xml")){
-                    CharSheetActivity.pc3 = reader.readChar(res.getXml(R.xml.character3));
-                }
-            } catch (XmlPullParserException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            CharSheetActivity.pc1 = reader.readChar(res.getXml(R.xml.character1));
+            CharSheetActivity.pc2 = reader.readChar(res.getXml(R.xml.character2));
+            CharSheetActivity.pc3 = reader.readChar(res.getXml(R.xml.character3));
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         if(CharSheetActivity.pc1 !=null){
             characterList.add(CharSheetActivity.pc1.getName());
         } else{
+            System.out.println("pc 1 is null");
             characterList.add(newChar);
         }
         if(CharSheetActivity.pc2 != null){
             characterList.add(CharSheetActivity.pc2.getName());
         } else{
+            System.out.println("pc 2 is null");
             characterList.add(newChar);
         }
         if(CharSheetActivity.pc3 != null){
             characterList.add(CharSheetActivity.pc3.getName());
         } else{
+            System.out.println("pc 3 is null");
             characterList.add(newChar);
         }
     }

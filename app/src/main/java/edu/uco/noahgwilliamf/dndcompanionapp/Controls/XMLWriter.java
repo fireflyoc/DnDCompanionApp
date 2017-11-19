@@ -1,6 +1,7 @@
 package edu.uco.noahgwilliamf.dndcompanionapp.Controls;
 
 import android.content.Context;
+import android.util.Xml;
 
 import org.xmlpull.v1.XmlSerializer;
 
@@ -30,6 +31,7 @@ public class XMLWriter {
 
     public void writeToXML(int i) throws IOException {
         //do stuff here
+        serializer = Xml.newSerializer();
         StringWriter writer = new StringWriter();
         serializer.setOutput(writer);
         switch (i){
@@ -79,7 +81,7 @@ public class XMLWriter {
         serializer.startTag("","Speed");
         serializer.text(""+pc.getMoveSpeed());
         serializer.endTag("","Speed");
-        serializer.startTag("","level");
+        serializer.startTag("","Level");
         serializer.text(""+pc.getLevel());
         serializer.endTag("","Level");
         serializer.startTag("","Name");

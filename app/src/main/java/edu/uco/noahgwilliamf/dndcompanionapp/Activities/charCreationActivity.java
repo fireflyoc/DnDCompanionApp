@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -50,6 +51,7 @@ public class charCreationActivity extends Activity {
 
         setUpNavi();
 
+
         raceSpinner = (Spinner) findViewById(R.id.char_create_race_spinner);
         classSpinner = (Spinner) findViewById(R.id.char_create_class_spinner);
         levelSpinner = (Spinner) findViewById(R.id.char_create_level_spinner);
@@ -73,7 +75,7 @@ public class charCreationActivity extends Activity {
 
         ArrayAdapter<CharSequence> classAdapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.classTypes, R.layout.char_spinner_item);
         classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        classSpinner.setAdapter(raceAdapter);
+        classSpinner.setAdapter(classAdapter);
         classSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -139,12 +141,13 @@ public class charCreationActivity extends Activity {
             public void onClick(View view) {
 
                 Boolean allGood = true;
+                System.out.println("Create Button Pressed");
 
                 Intent i = new Intent(charCreationActivity.this, CharSheetActivity.class);
                 PlayerCharacter pc = new PlayerCharacter();
                 pc.setRace(race);
                 pc.setLevel(level);
-                if(name.getText().toString()!=null){
+                if(name.getText().toString()!=""){
                     pc.setName(name.getText().toString());
                 } else{
                     allGood=false;
@@ -266,8 +269,10 @@ public class charCreationActivity extends Activity {
                                 i.putExtra("CharNum", 2);
                                 break;
                         }
+                        startActivity(i);
                     } else {
                         //Toast that something isn't filled in
+                        Toast.makeText(getApplicationContext(),"Something isn't filled in",Toast.LENGTH_SHORT);
                     }
 
                 } catch (IOException e) {

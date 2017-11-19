@@ -44,7 +44,7 @@
         <item>Dragonborn</item>
     </array>
 
-    <array name="levels">
+    <string-array name="levels">
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -65,7 +65,7 @@
         <item>18</item>
         <item>19</item>
         <item>20</item>
-    </array>
+    </string-array>
     <array name="menu">
         <item>Spell List</item>
         <item>Feats List</item>

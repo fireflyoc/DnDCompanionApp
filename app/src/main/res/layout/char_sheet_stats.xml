@@ -312,7 +312,6 @@
                 android:id="@+id/charSpeedTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/charSpeedTextView"
                 android:background="@drawable/border"
                 android:text="Speed:\n30 ft"
                 android:textAlignment="center"

@@ -256,17 +256,19 @@ public class charCreationActivity extends Activity {
                                 CharSheetActivity.pc1 = pc;
                                 writer.writeToXML(1);
                                 i.putExtra("CharNum", 0);
-
+                                navi.updateOptions(1);
                                 break;
                             case 2:
                                 CharSheetActivity.pc2 = pc;
                                 writer.writeToXML(2);
                                 i.putExtra("CharNum", 1);
+                                navi.updateOptions(2);
                                 break;
                             case 3:
                                 CharSheetActivity.pc3 = pc;
                                 writer.writeToXML(3);
                                 i.putExtra("CharNum", 2);
+                                navi.updateOptions(3);
                                 break;
                         }
                         startActivity(i);

@@ -82,7 +82,6 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
 
     private void readCharactersFile() {
         String newChar = "New Character";
-        String[] files = c.fileList();
         try {
             CharSheetActivity.pc1 = reader.readChar(res.getXml(R.xml.character1));
             CharSheetActivity.pc2 = reader.readChar(res.getXml(R.xml.character2));
@@ -162,4 +161,21 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
     }//end
 
 
+    public void updateOptions(int i) {
+        switch(i){
+            case 1:
+                optionsStringArray[0] = CharSheetActivity.pc1.getName();
+                characterList.set(0, CharSheetActivity.pc1.getName());
+                break;
+            case 2:
+                optionsStringArray[1] = CharSheetActivity.pc2.getName();
+                characterList.set(1,CharSheetActivity.pc2.getName());
+                break;
+            case 3:
+                optionsStringArray[2] = CharSheetActivity.pc3.getName();
+                characterList.set(2,CharSheetActivity.pc3.getName());
+                break;
+        }
+        listAdapter = new ArrayAdapter<String>(c, R.layout.drawer_list_item, optionsStringArray);
+    }
 }

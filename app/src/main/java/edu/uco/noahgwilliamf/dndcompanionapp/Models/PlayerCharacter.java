@@ -45,6 +45,21 @@ public class PlayerCharacter {
         attackList = new ArrayList<>();
         languages = new ArrayList<>();
         tools = new ArrayList<>();
+        baseAC = 0;
+        hp = 0;
+        level=1;
+        maxHp = 0;
+        moveSpeed = 30;
+        str=0;
+        dex=0;
+        inte=0;
+        wis=0;
+        cha=0;
+        con=0;
+        name="";
+        hitDie="";
+        race="";
+        pClass="";
     }
 
     //lots of encapsulation here

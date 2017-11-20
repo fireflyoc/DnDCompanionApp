@@ -289,33 +289,94 @@
             android:layout_toRightOf="@id/charStatLayout"
             android:background="@drawable/border_thick">
 
-            <TextView
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/border"
+                >
+                <TextView
                 android:id="@+id/charACTextView"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:text="AC:\n 22"
+                android:text="AC:"
                 android:textAlignment="center"
                 android:textSize="20sp" />
+                <EditText
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/char_stats_ac"
+                    android:layout_below="@id/charACTextView"
+                    android:inputType="number"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
 
-            <TextView
-
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                >
+                <TextView
                 android:id="@+id/charHPTextView"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:text="HP:\n22/53"
+                android:text="HP:"
                 android:textAlignment="center"
                 android:textSize="20sp" />
+                <EditText
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/char_sheet_curr_hp"
+                    android:layout_below="@id/charHPTextView"
+                    android:inputType="number"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="\n/"
+                    android:textSize="16sp"
+                    android:id="@+id/char_sheet_slash"
+                    android:layout_toRightOf="@id/char_sheet_curr_hp"
+                    android:layout_below="@id/charHPTextView"/>
+                <EditText
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:id="@+id/char_sheet_max_hp"
+                    android:layout_toRightOf="@id/char_sheet_slash"
+                    android:layout_alignBottom="@id/char_sheet_curr_hp"/>
+            </RelativeLayout>
 
-            <TextView
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                >
+                <TextView
                 android:id="@+id/charSpeedTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:text="Speed:\n30 ft"
+                android:text="Speed:"
                 android:textAlignment="center"
                 android:textSize="20sp" />
+            <EditText
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/charSpeedTextView"
+                android:id="@+id/char_sheet_speed"
+                android:inputType="number"
+                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="\nft"
+                    android:layout_below="@id/charSpeedTextView"
+                    android:layout_toRightOf="@id/char_sheet_speed"/>
+            </RelativeLayout>
+
+
 
         </LinearLayout>
 

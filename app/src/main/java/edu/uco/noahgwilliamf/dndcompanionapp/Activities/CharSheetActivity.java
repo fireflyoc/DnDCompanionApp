@@ -36,8 +36,8 @@ public class CharSheetActivity extends Activity {
     private ListView menuList, charList;
     private ImageButton menuButton;
     private NavigationDrawerClickListener navi;
-    private TextView charName, levelClassRace, strBonus, dexBonus, conBonus, intBonus, wisBonus, chaBonus, charAC, charHP, charSpeed;
-    private EditText charStr, charDex, charCon, charInt, charWis, charCha;
+    private TextView charName, levelClassRace, strBonus, dexBonus, conBonus, intBonus, wisBonus, chaBonus;
+    private EditText charStr, charDex, charCon, charInt, charWis, charCha, charCurHP, charMaxHP, charSpeed, charAC;
     private Intent intent;
     public static PlayerCharacter pc1 = null, pc2 = null, pc3 = null;
     private XMLReader reader;
@@ -92,12 +92,104 @@ public class CharSheetActivity extends Activity {
         wisBonus = (TextView) findViewById(R.id.charWisBonus);
         chaBonus = (TextView) findViewById(R.id.charChaBonus);
 
-        charAC = (TextView) findViewById(R.id.charACTextView);
-        charHP = (TextView) findViewById(R.id.charHPTextView);
-        charSpeed = (TextView) findViewById(R.id.charSpeedTextView);
+        charAC = (EditText) findViewById(R.id.char_stats_ac);
+        charAC.setText(pc.getBaseAC()+"");
+        charAC.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-        charAC.setText("AC\n"+pc.getBaseAC());
-        charSpeed.setText("Speed\n"+pc.getMoveSpeed());
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String ac = charAC.getText().toString();
+                if(isParseable(ac)){
+                    pc.setBaseAC(Integer.parseInt(ac));
+
+                } else{
+                    pc.setBaseAC(0);
+                }
+            }
+        });
+        charCurHP = (EditText) findViewById(R.id.char_sheet_curr_hp);
+        charCurHP.setText(pc.getHp()+"");
+        charCurHP.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String ac = charCurHP.getText().toString();
+                if(isParseable(ac)){
+                    pc.setHp(Integer.parseInt(ac));
+
+                } else{
+                    pc.setHp(0);
+                }
+            }
+        });
+        charMaxHP = (EditText) findViewById(R.id.char_sheet_max_hp);
+        charMaxHP.setText(pc.getMaxHp()+"");
+        charMaxHP.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String ac = charMaxHP.getText().toString();
+                if(isParseable(ac)){
+                    pc.setMaxHp(Integer.parseInt(ac));
+
+                } else{
+                    pc.setMaxHp(0);
+                }
+            }
+        });
+        charSpeed = (EditText) findViewById(R.id.char_sheet_speed);
+        charSpeed.setText(pc.getMoveSpeed()+"");
+        charSpeed.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String ac = charSpeed.getText().toString();
+                if(isParseable(ac)){
+                    pc.setMoveSpeed(Integer.parseInt(ac));
+
+                } else{
+                    pc.setMoveSpeed(0);
+                }
+            }
+        });
+
+
 
         charName.setText(pc.getName());
         levelClassRace.setText("Level "+pc.getLevel() + " "+pc.getRace() + " " + pc.getpClass());

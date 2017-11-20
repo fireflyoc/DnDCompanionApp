@@ -147,7 +147,8 @@ public class charCreationActivity extends Activity {
                 PlayerCharacter pc = new PlayerCharacter();
                 pc.setRace(race);
                 pc.setLevel(level);
-                if(name.getText().toString()!=""){
+                if(!name.getText().toString().trim().equals("")){
+                    System.out.println("Name: "+name.getText().toString());
                     pc.setName(name.getText().toString());
                 } else{
                     allGood=false;
@@ -163,6 +164,24 @@ public class charCreationActivity extends Activity {
                     pc.setHitDie("d12");
                 } else {
                     allGood = false;
+                }
+                if(mClass.equalsIgnoreCase("barbarian") || mClass.equalsIgnoreCase("fighter") || mClass.equalsIgnoreCase("monk") || mClass.equalsIgnoreCase("ranger")){
+                    pc.proficiencies.add("Strength Save");
+                }
+                if(mClass.equalsIgnoreCase("bard") || mClass.equalsIgnoreCase("monk") || mClass.equalsIgnoreCase("ranger") || mClass.equalsIgnoreCase("rogue")){
+                    pc.proficiencies.add("Dexterity Save");
+                }
+                if(mClass.equalsIgnoreCase("barbarian") || mClass.equalsIgnoreCase("fighter") || mClass.equalsIgnoreCase("sorcerer")){
+                    pc.proficiencies.add("Constitution Save");
+                }
+                if(mClass.equalsIgnoreCase("druid") || mClass.equalsIgnoreCase("rogue") || mClass.equalsIgnoreCase("wizard")){
+                    pc.proficiencies.add("Intelligence Save");
+                }
+                if(mClass.equalsIgnoreCase("cleric") || mClass.equalsIgnoreCase("druid") || mClass.equalsIgnoreCase("paladin") || mClass.equalsIgnoreCase("warlock") || mClass.equalsIgnoreCase("wizard")){
+                    pc.proficiencies.add("Wisdom Save");
+                }
+                if(mClass.equalsIgnoreCase("bard") || mClass.equalsIgnoreCase("cleric") || mClass.equalsIgnoreCase("paladin") || mClass.equalsIgnoreCase("sorcerer") || mClass.equalsIgnoreCase("warlock")){
+                    pc.proficiencies.add("Charisma Save");
                 }
                 if (isParseable(str.getText().toString())) {
                     pc.setStr(Integer.parseInt(str.getText().toString()));
@@ -273,8 +292,9 @@ public class charCreationActivity extends Activity {
                         }
                         startActivity(i);
                     } else {
+                        System.out.println("Something isn't filled in");
                         //Toast that something isn't filled in
-                        Toast.makeText(getApplicationContext(),"Something isn't filled in",Toast.LENGTH_SHORT);
+                        Toast.makeText(getApplicationContext(),"Something isn't filled in",Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (IOException e) {

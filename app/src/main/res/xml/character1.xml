@@ -14,6 +14,8 @@
     <Name>Charlie</Name>
     <Level>1</Level>
     <Race>Dwarf</Race>
+    <hp>5</hp>
+    <Max_HP>10</Max_HP>
 
     <Proficiencies>Athletics</Proficiencies>
     <Proficiencies>Insight</Proficiencies>

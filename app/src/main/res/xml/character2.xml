@@ -14,6 +14,8 @@
     <Name>Gandalf</Name>
     <Level>1</Level>
     <Race>Human</Race>
+    <hp>5</hp>
+    <Max_HP>10</Max_HP>
 
     <Proficiencies>Arcana</Proficiencies>
     <Proficiencies>Insight</Proficiencies>

@@ -81,7 +81,7 @@ public class XMLReader {
             eventType = parser.next();
         }
 
-        if(pc.getpClass() == null){
+        if(pc.getpClass() == ""){
             pc = null;
         }
 

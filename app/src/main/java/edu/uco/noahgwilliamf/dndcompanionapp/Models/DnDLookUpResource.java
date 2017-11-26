@@ -6,7 +6,7 @@ package edu.uco.noahgwilliamf.dndcompanionapp.Models;
 
 
 //basic class that allows easier collections
-public class DnDLookUpResource {
+public abstract class DnDLookUpResource {
 
     private String name;
     private String description;
@@ -20,6 +20,8 @@ public class DnDLookUpResource {
         this.setName(name);
         this.setDescription(description);
     }
+
+    abstract public  String getDetails();
 
     public String getName() {
         return name;

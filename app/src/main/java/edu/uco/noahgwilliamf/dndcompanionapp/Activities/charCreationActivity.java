@@ -115,24 +115,24 @@ public class charCreationActivity extends Activity {
         wis = (EditText) findViewById(R.id.char_create_wis_edit);
         cha = (EditText) findViewById(R.id.char_create_cha_edit);
 
-        acro = (CheckBox) findViewById(R.id.char_create_acrobatics);
-        animal = (CheckBox) findViewById(R.id.char_create_animal);
-        arcana = (CheckBox) findViewById(R.id.char_create_arcana);
-        athletics = (CheckBox) findViewById(R.id.char_create_athletics);
-        decept = (CheckBox) findViewById(R.id.char_create_deception);
-        history = (CheckBox) findViewById(R.id.char_create_history);
-        insight = (CheckBox) findViewById(R.id.char_create_insight);
-        intimi = (CheckBox) findViewById(R.id.char_create_intimidation);
-        invest = (CheckBox) findViewById(R.id.char_create_investigation);
-        med = (CheckBox) findViewById(R.id.char_create_medicine);
-        nature = (CheckBox) findViewById(R.id.char_create_nature);
-        percept = (CheckBox) findViewById(R.id.char_create_perception);
-        perform = (CheckBox) findViewById(R.id.char_create_performance);
-        persuasion = (CheckBox) findViewById(R.id.char_create_persuasion);
-        religion = (CheckBox) findViewById(R.id.char_create_religion);
-        sleight = (CheckBox) findViewById(R.id.char_create_sleight);
-        stealth = (CheckBox) findViewById(R.id.char_create_stealth);
-        survival = (CheckBox) findViewById(R.id.char_create_survival);
+        acro = (CheckBox) findViewById(R.id.cb1);
+        animal = (CheckBox) findViewById(R.id.cb2);
+        arcana = (CheckBox) findViewById(R.id.cb3);
+        athletics = (CheckBox) findViewById(R.id.cb4);
+        decept = (CheckBox) findViewById(R.id.cb5);
+        history = (CheckBox) findViewById(R.id.cb6);
+        insight = (CheckBox) findViewById(R.id.cb7);
+        intimi = (CheckBox) findViewById(R.id.cb8);
+        invest = (CheckBox) findViewById(R.id.cb9);
+        med = (CheckBox) findViewById(R.id.cb10);
+        nature = (CheckBox) findViewById(R.id.cb11);
+        percept = (CheckBox) findViewById(R.id.cb12);
+        perform = (CheckBox) findViewById(R.id.cb13);
+        persuasion = (CheckBox) findViewById(R.id.cb14);
+        religion = (CheckBox) findViewById(R.id.cb15);
+        sleight = (CheckBox) findViewById(R.id.cb16);
+        stealth = (CheckBox) findViewById(R.id.cb17);
+        survival = (CheckBox) findViewById(R.id.cb18);
 
         create = (Button) findViewById(R.id.create_button);
 

@@ -15,6 +15,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 
+import edu.uco.noahgwilliamf.dndcompanionapp.Activities.WelcomeScreen;
 import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDCondition;
 import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDItem;
 import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDSpell;
@@ -216,6 +217,7 @@ public class JSONResourceReader extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         readJSON();
+
         return null;
     }
 } // end class

@@ -79,6 +79,7 @@ public class DnDResourceLookUpActivity extends Activity {
             case "condition":
                 setContentView(R.layout.resource_conditionlookup_activity);
                 setUpConditionList();
+                break;
             default:
                 System.err.println("Couldn't set contentView xml, no matching intent string");
                 break;

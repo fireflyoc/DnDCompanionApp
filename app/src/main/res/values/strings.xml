@@ -72,7 +72,6 @@
     </string-array>
     <array name="menu">
         <item>Spell List</item>
-        <item>Feats List</item>
         <item>Items List</item>
         <item>Conditions</item>
         <item>Dice Roller</item>
@@ -131,5 +130,12 @@
         <item>7</item>
         <item>8</item>
         <item>9</item>
+    </string-array>
+
+    <string-array name="item_types">
+        <item>Any</item>
+        <item>Weapon</item>
+        <item>Armor</item>
+        <item>General</item>
     </string-array>
 </resources>

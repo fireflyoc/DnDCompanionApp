@@ -20,9 +20,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.ItemListViewArrayAdapter;
-import edu.uco.noahgwilliamf.dndcompanionapp.Controls.JSONResourcetReader;
+import edu.uco.noahgwilliamf.dndcompanionapp.Controls.JSONResourceReader;
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.NavigationDrawerClickListener;
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.SpellListViewArrayAdapter;
+import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDCondition;
 import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDItem;
 import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDSpell;
 import edu.uco.noahgwilliamf.dndcompanionapp.R;
@@ -40,10 +41,12 @@ public class DnDResourceLookUpActivity extends Activity {
     private NavigationDrawerClickListener navi;
     private ArrayList<DnDSpell> spellList;
     private ArrayList<DnDItem> itemList;
-
+    private ArrayList<DnDCondition> conditionList;
     private SpellListViewArrayAdapter spellAdapter;
     private ItemListViewArrayAdapter itemAdapter;
 
+    private ListView conditionListView;
+    private ArrayAdapter conditionListAdapter;
     private android.app.FragmentManager fm;
 
 
@@ -72,6 +75,10 @@ public class DnDResourceLookUpActivity extends Activity {
             case "item":
                 setContentView(R.layout.resource_itemlookup_activity);
                 setUpItemList();
+                break;
+            case "condition":
+                setContentView(R.layout.resource_conditionlookup_activity);
+                setUpConditionList();
             default:
                 System.err.println("Couldn't set contentView xml, no matching intent string");
                 break;
@@ -81,6 +88,7 @@ public class DnDResourceLookUpActivity extends Activity {
         setUpNavi();
 
     } //end onCreate
+
 
     @Override
     protected void onResume() {
@@ -164,7 +172,7 @@ public class DnDResourceLookUpActivity extends Activity {
 
     private void resetSpellList() {
         spellList.clear();
-        for (DnDSpell S : JSONResourcetReader.getSpellList()) {
+        for (DnDSpell S : JSONResourceReader.getSpellList()) {
             spellList.add(S);
         }
 
@@ -175,7 +183,7 @@ public class DnDResourceLookUpActivity extends Activity {
         if (filter.length() > 0) {
 
             spellList.clear();
-            for (DnDSpell s : JSONResourcetReader.getSpellList()) {
+            for (DnDSpell s : JSONResourceReader.getSpellList()) {
                 if (s.getName().toLowerCase().contains(filter)) {
                     spellList.add(s);
                 }
@@ -234,7 +242,7 @@ public class DnDResourceLookUpActivity extends Activity {
                 if (adapterView.getItemAtPosition(i) != null) {
 
                     System.out.println("SPINNER SELECTED: " + adapterView.getItemAtPosition(i) + "");
-                    filterItems((searchInput.getText()+"").replace("\n", ""),(adapterView.getItemAtPosition(i) + "").toLowerCase());
+                    filterItems((searchInput.getText() + "").replace("\n", ""), (adapterView.getItemAtPosition(i) + "").toLowerCase());
 
                 }
             }
@@ -268,7 +276,7 @@ public class DnDResourceLookUpActivity extends Activity {
                 } else {
 
 
-                    filterItems(s,(itemTypeSpinner.getSelectedItem().toString()).toLowerCase());
+                    filterItems(s, (itemTypeSpinner.getSelectedItem().toString()).toLowerCase());
 
                 }
                 itemAdapter.notifyDataSetChanged();
@@ -279,19 +287,19 @@ public class DnDResourceLookUpActivity extends Activity {
     }
 
     private void filterItems(String nameFilter, String typeFilter) {
-        System.out.println("item searching: " + nameFilter + " type: " + typeFilter+"!");
+        System.out.println("item searching: " + nameFilter + " type: " + typeFilter + "!");
         if (nameFilter.length() > 0) {
 
             if (typeFilter.equalsIgnoreCase("any")) {
                 itemList.clear();
-                for (DnDItem s : JSONResourcetReader.getItemList()) {
+                for (DnDItem s : JSONResourceReader.getItemList()) {
                     if (s.getName().toLowerCase().contains(nameFilter)) {
                         itemList.add(s);
                     }
                 }
             } else {
                 itemList.clear();
-                for (DnDItem s : JSONResourcetReader.getItemList()) {
+                for (DnDItem s : JSONResourceReader.getItemList()) {
                     if (s.getType().toLowerCase().contains(typeFilter.toLowerCase())) {
                         if (s.getName().toLowerCase().contains(nameFilter)) {
                             itemList.add(s);
@@ -300,28 +308,10 @@ public class DnDResourceLookUpActivity extends Activity {
                 }
                 itemAdapter.notifyDataSetChanged();
             }
-        }else{
-           filterItemsByType(typeFilter);
+        } else {
+            filterItemsByType(typeFilter);
         }
 
-    }
-
-    private void filterItemsByName(String filter) {
-
-
-        if (filter.length() > 0) {
-
-
-            itemList.clear();
-            for (DnDItem s : JSONResourcetReader.getItemList()) {
-                if (s.getName().toLowerCase().contains(filter)) {
-                    itemList.add(s);
-                }
-            }
-            itemAdapter.notifyDataSetChanged();
-
-
-        }
     }
 
     private void filterItemsByType(String filter) {
@@ -334,7 +324,7 @@ public class DnDResourceLookUpActivity extends Activity {
                 itemAdapter.notifyDataSetChanged();
             } else {
                 itemList.clear();
-                for (DnDItem s : JSONResourcetReader.getItemList()) {
+                for (DnDItem s : JSONResourceReader.getItemList()) {
                     if (s.getType().toLowerCase().contains(filter)) {
                         itemList.add(s);
                     }
@@ -347,9 +337,92 @@ public class DnDResourceLookUpActivity extends Activity {
 
     private void resetItemList() {
         itemList.clear();
-        for (DnDItem S : JSONResourcetReader.getItemList()) {
+        for (DnDItem S : JSONResourceReader.getItemList()) {
             itemList.add(S);
         }
+    }
+
+
+    private void setUpConditionList() {
+
+        conditionList = new ArrayList<>();
+        resetConditionList();
+
+        conditionListView = (ListView) findViewById(R.id.condition_lookup_conditionListView);
+
+        conditionListAdapter = new ArrayAdapter(getApplicationContext(), R.layout.char_skill_list_item, conditionList);
+
+        conditionListView.setAdapter(conditionListAdapter);
+
+
+        conditionListView.setOnItemClickListener(new ListView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //Toast.makeText(getApplicationContext(), "spell: " + spellList.get(i).getName(), Toast.LENGTH_LONG).show();
+                DnDResourceDialogFragment frag = DnDResourceDialogFragment.newInstance(conditionList.get(i).getName(),
+                        conditionList.get(i).getDetails(), "");
+                frag.show(fm, "condition_details_fragment");
+
+
+            }
+
+        });
+
+        final EditText searchInput = (EditText) findViewById(R.id.condition_lookup_searchInput);
+
+
+        searchInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                String s = editable.toString();
+                s.replace("\n", "");
+
+                if (editable.length() == 0) {
+                    resetConditionList();
+
+                } else {
+
+
+                   filterConditions(s);
+                }
+                conditionListAdapter.notifyDataSetChanged();
+            }
+        });
+
+
+    }
+
+    private void filterConditions(String filter) {
+
+        if (filter.length() > 0) {
+
+            conditionList.clear();
+            for (DnDCondition s : JSONResourceReader.getConditionList()) {
+                if (s.getName().toLowerCase().contains(filter)) {
+                    conditionList.add(s);
+                }
+            }
+            conditionListAdapter.notifyDataSetChanged();
+        }
+    }
+
+    private void resetConditionList() {
+        conditionList.clear();
+        for (DnDCondition S : JSONResourceReader.getConditionList()) {
+            conditionList.add(S);
+        }
+
     }
 
 
@@ -371,7 +444,12 @@ public class DnDResourceLookUpActivity extends Activity {
                 drawer = (DrawerLayout) findViewById(R.id.item_lookup_layout);
                 menuList = (ListView) findViewById(R.id.item_lookup_menu);
                 menuButton = (ImageButton) findViewById(R.id.item_lookup_menu_button);
-
+                break;
+            case "condition":
+                drawer = (DrawerLayout) findViewById(R.id.condition_lookup_layout);
+                menuList = (ListView) findViewById(R.id.condition_lookup_menu);
+                menuButton = (ImageButton) findViewById(R.id.condition_lookup_menu_button);
+                break;
             default:
                 System.err.println("Couldn't set contentView xml, no matching intent string");
                 break;

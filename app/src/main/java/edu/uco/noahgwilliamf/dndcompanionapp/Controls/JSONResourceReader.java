@@ -15,6 +15,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 
+import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDCondition;
 import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDItem;
 import edu.uco.noahgwilliamf.dndcompanionapp.Models.DnDSpell;
 import edu.uco.noahgwilliamf.dndcompanionapp.R;
@@ -24,18 +25,20 @@ import edu.uco.noahgwilliamf.dndcompanionapp.R;
  * Created by Decker on 11/11/2017.
  */
 
-public class JSONResourcetReader extends AsyncTask<Void, Void, Void> {
+public class JSONResourceReader extends AsyncTask<Void, Void, Void> {
 
     //im ok with this being a class-level variable, its only set up once-at the weloome screen
     private static ArrayList<DnDSpell> spellList;
     private static ArrayList<DnDItem> itemList;
+    private static ArrayList<DnDCondition> conditionList;
     private Resources res;
 
 
-    public JSONResourcetReader(Resources res) {
+    public JSONResourceReader(Resources res) {
 
         spellList = new ArrayList<>();
         itemList = new ArrayList<>();
+        conditionList = new ArrayList<>();
         this.res = res;
 
     }
@@ -89,8 +92,29 @@ public class JSONResourcetReader extends AsyncTask<Void, Void, Void> {
         }
 
 
-    }
+        Writer conditionWriter = new StringWriter();
 
+        InputStream conditionResourceReader = res.openRawResource(R.raw.conditions);
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conditionResourceReader, "UTF-8"));
+            String line = reader.readLine();
+            while (line != null) {
+                conditionWriter.write(line);
+                line = reader.readLine();
+            }
+        } catch (Exception e) {
+            Log.e("JSON READER", "Unhandled exception while using JSONResourceReader", e);
+        } finally {
+            try {
+                itemResourceReader.close();
+            } catch (Exception e) {
+                Log.e("JSON READER", "Unhandled exception while using JSONResourceReader", e);
+            }
+            System.out.println("RE3: " +conditionWriter.toString());
+            parseCondtionData(conditionWriter.toString());
+        }
+
+    }
 
     private void parseSpellData(String data) {
         try {
@@ -148,6 +172,34 @@ public class JSONResourcetReader extends AsyncTask<Void, Void, Void> {
     }
 
 
+    private void parseCondtionData(String data) {
+
+        try {
+            JSONObject jsonObject = new JSONObject(data);
+            JSONArray items = jsonObject.getJSONArray("condition");
+            for (int i = 0; i < items.length(); i++) {
+                JSONObject thisItem = items.getJSONObject(i);
+                JSONArray descArray = thisItem.getJSONArray("desc");
+                ArrayList<String> convert = new ArrayList<>();
+                        for(int j = 0; j < descArray.length();j++){
+                            convert.add(descArray.get(j).toString());
+                            System.out.println("Converat added: " + descArray.get(j).toString());
+                        }
+                DnDCondition newItem = new DnDCondition(thisItem.getString("name"),convert);
+
+              conditionList.add(newItem);
+
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+
+
+
     public static ArrayList<DnDSpell> getSpellList() {
         return spellList;
     }
@@ -155,6 +207,10 @@ public class JSONResourcetReader extends AsyncTask<Void, Void, Void> {
     public static ArrayList<DnDItem> getItemList() {
         return itemList;
 
+    }
+
+    public  static ArrayList<DnDCondition> getConditionList(){
+        return conditionList;
     }
 
     @Override

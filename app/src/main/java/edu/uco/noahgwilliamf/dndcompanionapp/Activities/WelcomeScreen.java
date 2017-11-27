@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-import edu.uco.noahgwilliamf.dndcompanionapp.Controls.JSONResourcetReader;
+import edu.uco.noahgwilliamf.dndcompanionapp.Controls.JSONResourceReader;
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.NavigationDrawerClickListener;
 import edu.uco.noahgwilliamf.dndcompanionapp.R;
 
@@ -51,7 +51,7 @@ public class WelcomeScreen extends AppCompatActivity {
 
     private void setUpSpellList() {
 
-        JSONResourcetReader spellListReader = new JSONResourcetReader(getResources());
+        JSONResourceReader spellListReader = new JSONResourceReader(getResources());
         spellListReader.execute();
     }
 

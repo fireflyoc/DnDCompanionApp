@@ -126,16 +126,20 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
             c.startActivity(i);
 
         } else if (selection.equalsIgnoreCase(options[1])) {
-            //feats
-            System.out.println("pushed feat");
-        } else if (selection.equalsIgnoreCase(options[2])) {
             //items
             System.out.println("pushed items");
-        } else if (selection.equalsIgnoreCase(options[3])) {
+            Intent i = new Intent(c,DnDResourceLookUpActivity.class);
+            i.putExtra("resource","item");
+            c.startActivity(i);
+        } else if (selection.equalsIgnoreCase(options[2])) {
             //conditions
-            System.out.println("pushed conditions");
-        } else if (selection.equalsIgnoreCase(options[4])) {
-            //dice
+            System.out.println("pushed items");
+            Intent i = new Intent(c,DnDResourceLookUpActivity.class);
+            i.putExtra("resource","condition");
+            c.startActivity(i);
+            System.out.println("pushed Conditions");
+        } else if (selection.equalsIgnoreCase(options[3])) {
+            //dice roller
             System.out.println("pushed dice");
         } else if(selection.equalsIgnoreCase("new character")){
             Intent i = new Intent(c, charCreationActivity.class);

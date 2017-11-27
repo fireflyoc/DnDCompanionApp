@@ -1,0 +1,116 @@
+{
+  "items":[
+    {
+      "name": "Club",
+      "value": "1sp",
+      "desc": "Deals 1d4 Bludgeoning damage",
+      "type": "Weapon-simple",
+      "weight": "2lb."
+    },
+    {
+      "name": "Dagger",
+      "value": "2gp",
+      "desc": "Deals 1d4 piercing damage",
+      "type": "Weapon-simple",
+      "weight": "2lb."
+    },
+    {
+      "name": "Greatclub",
+      "value": "2sp",
+      "desc": "Two-Handed: Deals 184 Bludgeoning damage",
+      "type": "Weapon-simple",
+      "weight": "2lb."
+    },
+    {
+      "name": "Handaxe",
+      "value": "5gp",
+      "desc": "Thrown: Deals 1d6 Slashing damage",
+      "type": "Weapon-simple",
+      "weight": "2lb."
+    },
+    {
+      "name": "javelin",
+      "value": "5sp",
+      "desc": "Thrown: Deals 1d6 Piercing damage",
+      "type": "Weapon-simple",
+      "weight": "2lb."
+    },
+    {
+      "name": "Light Hammer",
+      "value": "2gp",
+      "desc": "Thrown: Deals 1d4 Bludgeoning damage",
+      "type": "Weapon-simple",
+      "weight": "2lb."
+    },
+    {
+      "name": "Mace",
+      "value": "2gp",
+      "desc": "Deals 1d6 Bludgeoning damage",
+      "type": "Weapon-simple",
+      "weight": "2lb."
+    },
+    {
+      "name": "Quarterstaff",
+      "value": "2sp",
+      "desc": "Thrown: Deals 1d6 Bludgeoning damage",
+      "type": "Weapon-simple",
+      "weight": "2lb."
+    },
+    {
+      "name": "Sickle",
+      "value": "1gp",
+      "desc": "Deals 1d4 slashing damage",
+      "type": "Weapon-simple",
+      "weight": "2lb."
+    },
+    {
+      "name": "Spear",
+      "value": "1gp",
+      "desc": "Thrown: Deals 1d6 Piercing damage",
+      "type": "Weapon-simple",
+      "weight": "2lb."
+    },
+    {
+      "name": "Battleaxe",
+      "value": "10gp",
+      "desc": "Thrown: Deals 1d8 Slashing damage",
+      "type": "Weapon-martial",
+      "weight": "10lb."
+    },
+    {
+      "name": "Abacus",
+      "value": "2gp",
+      "desc": "Useful Adventuring Item or Vendor trash",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Alchemist's Fire (flask)",
+      "value": "50gp",
+      "desc": "Thrown: Deals 1d4 fire damage each turn, DC 10 Dex to extinguish the flames",
+      "type": "General",
+      "weight": ".5lb."
+    },
+    {
+      "name": "Padded Armor",
+      "value": "5gp",
+      "desc": "AC: 11+Dex Mod",
+      "type": "Armor-Light",
+      "weight": "8lb."
+    },
+    {
+      "name": "Plate Armor",
+      "value": "1500gp",
+      "desc": "AC: 12+Dex Mod(max 2)",
+      "type": "Armor-Heavy",
+      "weight": "65lb."
+    },
+    {
+      "name": "Shield",
+      "value": "10gp",
+      "desc": "AC: +2",
+      "type": "Armor-Shield",
+      "weight": "6lb."
+    }
+  ]
+}

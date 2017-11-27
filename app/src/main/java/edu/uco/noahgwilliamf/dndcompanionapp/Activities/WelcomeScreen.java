@@ -7,8 +7,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import edu.uco.noahgwilliamf.dndcompanionapp.Controls.JSONSpellListReader;
+import edu.uco.noahgwilliamf.dndcompanionapp.Controls.JSONResourceReader;
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.NavigationDrawerClickListener;
 import edu.uco.noahgwilliamf.dndcompanionapp.R;
 
@@ -20,8 +21,11 @@ public class WelcomeScreen extends AppCompatActivity {
     private ImageButton menuButton;
     private NavigationDrawerClickListener navi;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_activity);
         navi = NavigationDrawerClickListener.getInstance(this, getResources());
@@ -38,21 +42,24 @@ public class WelcomeScreen extends AppCompatActivity {
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                drawer.openDrawer(Gravity.LEFT);
 
+                drawer.openDrawer(Gravity.LEFT);
 
             }
         });
 
         //called here at the splash screen cuz its a long function, gives it time to complete
         //before the user can see it
+        Toast.makeText(getApplicationContext(), "Loading Resources, please wait a moment.", Toast.LENGTH_SHORT).show();
         setUpSpellList();
-}
+        Toast.makeText(getApplicationContext(), "Ready!", Toast.LENGTH_SHORT).show();
+
+    }
 
     private void setUpSpellList() {
 
-        JSONSpellListReader spellListReader = new JSONSpellListReader(getResources());
-        spellListReader.execute();
+        JSONResourceReader jsontResourceReader = new JSONResourceReader(getResources());
+        jsontResourceReader.execute();
     }
 
     @Override
@@ -61,6 +68,5 @@ public class WelcomeScreen extends AppCompatActivity {
         super.onResume();
         drawer.closeDrawers();
     }
-
 
 }

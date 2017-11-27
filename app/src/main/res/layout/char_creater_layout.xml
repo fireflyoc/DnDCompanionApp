@@ -253,120 +253,120 @@
                 android:layout_height="wrap_content"
                 android:text="Acrobatics"
                 android:layout_below="@id/char_create_proficiencies"
-                android:id="@+id/char_create_acrobatics"/>
+                android:id="@+id/cb1"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_acrobatics"
+                android:layout_below="@id/cb1"
                 android:text="Animal Handling"
-                android:id="@+id/char_create_animal"/>
+                android:id="@+id/cb2"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_animal"
+                android:layout_below="@id/cb2"
                 android:text="Arcana"
-                android:id="@+id/char_create_arcana"/>
+                android:id="@+id/cb3"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_arcana"
+                android:layout_below="@id/cb3"
                 android:text="Athletics"
-                android:id="@+id/char_create_athletics"/>
+                android:id="@+id/cb4"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_athletics"
+                android:layout_below="@id/cb4"
                 android:text="Deception"
-                android:id="@+id/char_create_deception"/>
+                android:id="@+id/cb5"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_deception"
+                android:layout_below="@id/cb5"
                 android:text="History"
-                android:id="@+id/char_create_history"/>
+                android:id="@+id/cb6"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_history"
+                android:layout_below="@id/cb6"
                 android:text="Insight"
-                android:id="@+id/char_create_insight"/>
+                android:id="@+id/cb7"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/char_create_animal"
+                android:layout_toRightOf="@id/cb2"
                 android:text="Intimidation"
-                android:layout_alignTop="@id/char_create_acrobatics"
-                android:id="@+id/char_create_intimidation"/>
+                android:layout_alignTop="@id/cb1"
+                android:id="@+id/cb8"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_intimidation"
-                android:layout_alignLeft="@id/char_create_intimidation"
+                android:layout_below="@id/cb8"
+                android:layout_alignLeft="@id/cb8"
                 android:text="Investigation"
-                android:id="@+id/char_create_investigation"/>
+                android:id="@+id/cb9"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_investigation"
-                android:layout_alignLeft="@id/char_create_intimidation"
+                android:layout_below="@id/cb9"
+                android:layout_alignLeft="@id/cb8"
                 android:text="Medicine"
-                android:id="@+id/char_create_medicine"/>
+                android:id="@+id/cb10"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_medicine"
-                android:layout_alignLeft="@id/char_create_intimidation"
+                android:layout_below="@id/cb10"
+                android:layout_alignLeft="@id/cb8"
                 android:text="Nature"
-                android:id="@+id/char_create_nature"/>
+                android:id="@+id/cb11"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_nature"
-                android:layout_alignLeft="@id/char_create_intimidation"
+                android:layout_below="@id/cb11"
+                android:layout_alignLeft="@id/cb8"
                 android:text="Perception"
-                android:id="@+id/char_create_perception"/>
+                android:id="@+id/cb12"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_perception"
-                android:layout_alignLeft="@id/char_create_intimidation"
+                android:layout_below="@id/cb12"
+                android:layout_alignLeft="@id/cb8"
                 android:text="Performance"
-                android:id="@+id/char_create_performance"/>
+                android:id="@+id/cb13"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_performance"
-                android:layout_alignLeft="@id/char_create_intimidation"
+                android:layout_below="@id/cb13"
+                android:layout_alignLeft="@id/cb8"
                 android:text="Persuasion"
-                android:id="@+id/char_create_persuasion"/>
+                android:id="@+id/cb14"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/char_create_intimidation"
-                android:layout_toRightOf="@id/char_create_performance"
+                android:layout_alignTop="@id/cb8"
+                android:layout_toRightOf="@id/cb13"
                 android:text="Religion"
-                android:id="@+id/char_create_religion"/>
+                android:id="@+id/cb15"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_religion"
-                android:layout_alignLeft="@id/char_create_religion"
+                android:layout_below="@id/cb15"
+                android:layout_alignLeft="@id/cb15"
                 android:text="Sleight of Hand"
-                android:id="@+id/char_create_sleight"/>
+                android:id="@+id/cb16"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_sleight"
-                android:layout_alignLeft="@id/char_create_religion"
+                android:layout_below="@id/cb16"
+                android:layout_alignLeft="@id/cb15"
                 android:text="Stealth"
-                android:id="@+id/char_create_stealth"/>
+                android:id="@+id/cb17"/>
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/char_create_stealth"
-                android:layout_alignLeft="@id/char_create_religion"
+                android:layout_below="@id/cb17"
+                android:layout_alignLeft="@id/cb15"
                 android:text="Survival"
-                android:id="@+id/char_create_survival"/>
+                android:id="@+id/cb18"/>
         </RelativeLayout>
 
         <Button

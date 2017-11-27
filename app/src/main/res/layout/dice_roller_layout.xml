@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5sp"
+    android:background="@drawable/parchment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/dieRollerMenuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/border_thick"
+            android:src="@drawable/menu_icon_2" />
+        <TextView
+
+            android:id="@+id/diceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/dieRollerMenuButton"
+            android:background="@drawable/border"
+            android:text="@string/dice"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:layout_alignParentTop="true" />
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/dicePickerGroup"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dieRollerMenuButton"
+            android:background="@drawable/border">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/die_type"
+                android:textSize="20sp"
+                android:id="@+id/dice_type"
+                />
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/diceTypeSpinner"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/dice_type">
+            </Spinner>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/die_num"
+                android:textSize="20sp"
+                android:id="@+id/dice_num"
+                android:layout_below="@id/diceTypeSpinner"
+                />
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/diceNumSpinner"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@id/dice_num"
+                android:layout_toRightOf="@id/dice_num">
+            </Spinner>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dicePickerGroup">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dicePick1"
+                android:background=""
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dicePick2"
+                android:layout_toRightOf="@id/dicePick1"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dicePick3"
+                android:layout_toRightOf="@id/dicePick2"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dicePick4"
+                android:layout_below="@id/dicePick1"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dicePick5"
+                android:layout_toRightOf="@id/dicePick1"
+                android:layout_below="@id/dicePick1"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dicePick6"
+                android:layout_toRightOf="@id/dicePick2"
+                android:layout_below="@id/dicePick1"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dicePick7"
+                android:layout_below="@id/dicePick4"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dicePick8"
+                android:layout_toRightOf="@id/dicePick1"
+                android:layout_below="@id/dicePick4"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dicePick9"
+                android:layout_toRightOf="@id/dicePick9"
+                android:layout_below="@id/dicePick4"
+                />
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rollButton"
+            android:background=""
+            android:text="@string/roll"
+            android:textSize="20sp"
+            android:layout_alignParentBottom="true"/>
+
+
+
+    </RelativeLayout>
+
+
+    <!-- Side bar menu -->
+    <ListView
+        android:id="@+id/charSheetMenu"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/colorPrimary"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent" />
+
+    </android.support.v4.widget.DrawerLayout>

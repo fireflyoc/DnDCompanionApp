@@ -16,6 +16,10 @@
     <string name="level">Level:</string>
     <string name="name">Name:</string>
     <string name="create">Create</string>
+    <string name="dice">Dice Roller</string>
+    <string name="die_type">Dice Type:</string>
+    <string name="die_num">Number of Dice:</string>
+    <string name="roll">Roll</string>
 
     <array name="classTypes">
         <item>Barbarian</item>
@@ -107,4 +111,25 @@
         <item>Stealth (Dex)</item>
         <item>Survival (Wis)</item>
     </array>
+
+    <string-array name="dice_types">
+        <item>d4</item>
+        <item>d6</item>
+        <item>d8</item>
+        <item>d10</item>
+        <item>d12</item>
+        <item>d20</item>
+    </string-array>
+
+    <string-array name="numDice">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
 </resources>

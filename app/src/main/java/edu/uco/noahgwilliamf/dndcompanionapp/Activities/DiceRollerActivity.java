@@ -33,9 +33,10 @@ public class DiceRollerActivity extends Activity {
     private Spinner numDiceSpinner, diceTypeSpinner;
     private String dieType;
     private ImageView die1, die2, die3, die4, die5, die6, die7, die8, die9;
-    private int numDie, res1, res2, res3, res4, res5, res6, res7, res8, res9;
+    private int numDie;
     private Button rollButton;
     private ArrayList<ImageView> dice;
+    private ArrayList<Integer> numbers;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,7 +116,7 @@ public class DiceRollerActivity extends Activity {
                     a.setAnimationListener(animationListener);
                 }
                 for(int i=0; i<numDie; i++){
-                    //animations.get(i).startAnimation();
+                    dice.get(i).startAnimation(animations.get(i));
                 }
             }
         });

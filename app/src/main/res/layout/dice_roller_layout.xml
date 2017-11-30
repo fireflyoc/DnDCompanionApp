@@ -74,12 +74,12 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/dicePickerGroup">
+            android:layout_below="@id/dicePickerGroup"
+            android:layout_above="@id/diceTotalText">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/dicePick1"
-                android:background=""
                 />
             <ImageView
                 android:layout_width="wrap_content"
@@ -135,11 +135,19 @@
                 />
         </RelativeLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/rollButton"
+            android:id="@+id/diceTotalText"
+            android:textAlignment="center"
+            android:textSize="22sp"/>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/rollButton"
-            android:background=""
+            android:background="@android:color/transparent"
             android:text="@string/roll"
             android:textSize="20sp"
             android:layout_alignParentBottom="true"/>

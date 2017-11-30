@@ -26,6 +26,9 @@
         <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.charCreationActivity">
 
         </activity>
+        <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.DiceRollerActivity">
+
+        </activity>
     </application>
 
 </manifest>

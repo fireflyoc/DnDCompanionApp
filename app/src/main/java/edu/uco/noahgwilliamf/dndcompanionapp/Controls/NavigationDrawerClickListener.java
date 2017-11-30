@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import edu.uco.noahgwilliamf.dndcompanionapp.Activities.CharSheetActivity;
+import edu.uco.noahgwilliamf.dndcompanionapp.Activities.DiceRollerActivity;
 import edu.uco.noahgwilliamf.dndcompanionapp.Activities.DnDResourceLookUpActivity;
 import edu.uco.noahgwilliamf.dndcompanionapp.Activities.charCreationActivity;
 import edu.uco.noahgwilliamf.dndcompanionapp.R;
@@ -141,6 +142,8 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
         } else if (selection.equalsIgnoreCase(options[3])) {
             //dice roller
             System.out.println("pushed dice");
+            Intent i = new Intent(c, DiceRollerActivity.class);
+            c.startActivity(i);
         } else if(selection.equalsIgnoreCase("new character")){
             Intent i = new Intent(c, charCreationActivity.class);
             if(CharSheetActivity.pc1 == null){

@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/diceRollLayout"
     android:layout_margin="5sp"
     android:background="@drawable/parchment">
 
@@ -71,77 +72,91 @@
         </RelativeLayout>
 
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/dicePickerGroup"
-            android:layout_above="@id/diceTotalText">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/dicePick1"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/dicePick2"
-                android:layout_toRightOf="@id/dicePick1"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/dicePick3"
-                android:layout_toRightOf="@id/dicePick2"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/dicePick4"
-                android:layout_below="@id/dicePick1"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/dicePick5"
-                android:layout_toRightOf="@id/dicePick1"
-                android:layout_below="@id/dicePick1"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/dicePick6"
-                android:layout_toRightOf="@id/dicePick2"
-                android:layout_below="@id/dicePick1"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/dicePick7"
-                android:layout_below="@id/dicePick4"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/dicePick8"
-                android:layout_toRightOf="@id/dicePick1"
-                android:layout_below="@id/dicePick4"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/dicePick9"
-                android:layout_toRightOf="@id/dicePick9"
-                android:layout_below="@id/dicePick4"
-                />
-        </RelativeLayout>
+            android:orientation="vertical"
+            android:layout_below="@id/dicePickerGroup">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@mipmap/d4_1"
+                    android:id="@+id/dicePick1"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@mipmap/d4_1"
+                    android:id="@+id/dicePick2"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@mipmap/d4_1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dicePick3"
+                    />
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/rollButton"
-            android:id="@+id/diceTotalText"
-            android:textAlignment="center"
-            android:textSize="22sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/d4_1"
+                    android:layout_weight="1"
+                    android:id="@+id/dicePick4"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@mipmap/d4_1"
+                    android:id="@+id/dicePick5"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@mipmap/d4_1"
+                    android:id="@+id/dicePick6"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/d4_1"
+                    android:layout_weight="1"
+                    android:id="@+id/dicePick7"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/d4_1"
+                    android:layout_weight="1"
+                    android:id="@+id/dicePick8"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@mipmap/d4_1"
+                    android:id="@+id/dicePick9"
+                    />
+            </LinearLayout>
+        </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
@@ -152,6 +167,13 @@
             android:textSize="20sp"
             android:layout_alignParentBottom="true"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/diceTotalText"
+            android:layout_above="@id/rollButton"
+            android:textAlignment="center"
+            android:textSize="22sp"/>
 
 
     </RelativeLayout>
@@ -159,7 +181,7 @@
 
     <!-- Side bar menu -->
     <ListView
-        android:id="@+id/charSheetMenu"
+        android:id="@+id/diceRollMenu"
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"

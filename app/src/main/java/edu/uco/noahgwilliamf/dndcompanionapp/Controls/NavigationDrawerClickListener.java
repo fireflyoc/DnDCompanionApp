@@ -14,8 +14,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import edu.uco.noahgwilliamf.dndcompanionapp.Activities.CharSheetActivity;
+import edu.uco.noahgwilliamf.dndcompanionapp.Activities.ConditionsLookupActivity;
 import edu.uco.noahgwilliamf.dndcompanionapp.Activities.DiceRollerActivity;
-import edu.uco.noahgwilliamf.dndcompanionapp.Activities.DnDResourceLookUpActivity;
+import edu.uco.noahgwilliamf.dndcompanionapp.Activities.ItemsLookupActivity;
+import edu.uco.noahgwilliamf.dndcompanionapp.Activities.SpellLookupActivity;
 import edu.uco.noahgwilliamf.dndcompanionapp.Activities.charCreationActivity;
 import edu.uco.noahgwilliamf.dndcompanionapp.R;
 
@@ -122,20 +124,19 @@ public  class NavigationDrawerClickListener implements ListView.OnItemClickListe
     private void handleSelection(String selection) {
         if (selection.equalsIgnoreCase(options[0])) {
             System.out.println("pushed spell");
-            Intent i = new Intent(c,DnDResourceLookUpActivity.class);
+            Intent i = new Intent(c,SpellLookupActivity.class);
             i.putExtra("resource","spell");
             c.startActivity(i);
 
         } else if (selection.equalsIgnoreCase(options[1])) {
             //items
             System.out.println("pushed items");
-            Intent i = new Intent(c,DnDResourceLookUpActivity.class);
+            Intent i = new Intent(c,ItemsLookupActivity.class);
             i.putExtra("resource","item");
             c.startActivity(i);
         } else if (selection.equalsIgnoreCase(options[2])) {
             //conditions
-            System.out.println("pushed items");
-            Intent i = new Intent(c,DnDResourceLookUpActivity.class);
+            Intent i = new Intent(c,ConditionsLookupActivity.class);
             i.putExtra("resource","condition");
             c.startActivity(i);
             System.out.println("pushed Conditions");

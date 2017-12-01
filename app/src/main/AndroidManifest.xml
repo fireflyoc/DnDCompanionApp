@@ -28,6 +28,17 @@
         </activity>
         <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.DiceRollerActivity">
 
+        </activity><activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.SpellLookupActivity"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.ConditionsLookupActivity"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity android:name="edu.uco.noahgwilliamf.dndcompanionapp.Activities.ItemsLookupActivity"
+            android:windowSoftInputMode="stateHidden">
+
         </activity>
     </application>
 

@@ -106,6 +106,12 @@ public class DiceRollerActivity extends Activity {
                 if(adapterView.getItemAtPosition(i)!=null){
                     numDie = parseInt(adapterView.getItemAtPosition(i)+"");
                     System.out.println("Number of Dice set to: "+adapterView.getItemAtPosition(i));
+                    for(int j=0; j<numDie; j++){
+                        dice.get(j).setVisibility(View.VISIBLE);
+                    }
+                    for(int j=numDie; j<dice.size(); j++){
+                        dice.get(j).setVisibility(View.INVISIBLE);
+                    }
                 }
             }
 
@@ -124,6 +130,10 @@ public class DiceRollerActivity extends Activity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(adapterView.getItemAtPosition(i)!=null){
                     dieType = adapterView.getItemAtPosition(i)+"";
+                    for(ImageView iv: dice){
+                        iv.setImageResource(getResources().getIdentifier(dieType+"_1", "mipmap", "edu.uco.noahgwilliamf.dndcompanionapp"));
+                    }
+
                 }
             }
 
@@ -183,12 +193,10 @@ public class DiceRollerActivity extends Activity {
                 anim8.setAnimationListener(animationListener);
                 anim9.setAnimationListener(animationListener);
 
-                for(int i=0; i<numDie; i++){
+
+                for(int i=0; i<numDie;i++){
                     dice.get(i).startAnimation(animations.get(i));
-                    dice.get(i).setVisibility(View.VISIBLE);
-                }
-                for(int i=numDie; i<dice.size(); i++){
-                    dice.get(i).setVisibility(View.INVISIBLE);
+
                 }
 
 

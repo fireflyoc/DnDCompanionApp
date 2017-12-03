@@ -1,81 +1,361 @@
 {
-  "items":[
+  "items": [
     {
       "name": "Club",
       "value": "1sp",
-      "desc": "Deals 1d4 Bludgeoning damage",
+      "desc": "1d4 Bludgeoning, Light",
       "type": "Weapon-simple",
       "weight": "2lb."
     },
     {
       "name": "Dagger",
       "value": "2gp",
-      "desc": "Deals 1d4 piercing damage",
+      "desc": "1d4 piercing, Finesse, Light, Thrown(20/60)",
       "type": "Weapon-simple",
-      "weight": "2lb."
+      "weight": "1lb."
     },
     {
       "name": "Greatclub",
       "value": "2sp",
-      "desc": "Two-Handed: Deals 184 Bludgeoning damage",
+      "desc": "1d8 Bludgeoning, Two-handed",
       "type": "Weapon-simple",
-      "weight": "2lb."
+      "weight": "10lb."
     },
     {
       "name": "Handaxe",
       "value": "5gp",
-      "desc": "Thrown: Deals 1d6 Slashing damage",
+      "desc": "1d6 Slashing , Light, Thrown",
       "type": "Weapon-simple",
       "weight": "2lb."
     },
     {
       "name": "javelin",
       "value": "5sp",
-      "desc": "Thrown: Deals 1d6 Piercing damage",
+      "desc": "1d6 Piercing, Light, Thrown ",
       "type": "Weapon-simple",
       "weight": "2lb."
     },
     {
       "name": "Light Hammer",
       "value": "2gp",
-      "desc": "Thrown: Deals 1d4 Bludgeoning damage",
+      "desc": " 1d4 Bludgeoning, Light, Thrown ",
       "type": "Weapon-simple",
       "weight": "2lb."
     },
     {
       "name": "Mace",
-      "value": "2gp",
-      "desc": "Deals 1d6 Bludgeoning damage",
+      "value": "5gp",
+      "desc": "1d6 Bludgeoning",
       "type": "Weapon-simple",
-      "weight": "2lb."
+      "weight": "4lb."
     },
     {
       "name": "Quarterstaff",
-      "value": "2sp",
-      "desc": "Thrown: Deals 1d6 Bludgeoning damage",
+      "value": "1gp",
+      "desc": "1d6 Bludgeoning, Versatile(1d8)",
       "type": "Weapon-simple",
       "weight": "2lb."
     },
     {
       "name": "Sickle",
       "value": "1gp",
-      "desc": "Deals 1d4 slashing damage",
+      "desc": " 1d4 slashing, Light",
       "type": "Weapon-simple",
       "weight": "2lb."
     },
     {
       "name": "Spear",
       "value": "1gp",
-      "desc": "Thrown: Deals 1d6 Piercing damage",
+      "desc": "1d6 Piercing, Thrown, Versatile(1d8)",
       "type": "Weapon-simple",
-      "weight": "2lb."
+      "weight": "3lb."
     },
     {
       "name": "Battleaxe",
       "value": "10gp",
-      "desc": "Thrown: Deals 1d8 Slashing damage",
+      "desc": "1d8 Slashing, Versatile(1d10)",
+      "type": "Weapon-martial",
+      "weight": "4lb."
+    },
+    {
+      "name": "Flail",
+      "value": "10gp",
+      "desc": "1d8 Bludgeoning",
+      "type": "Weapon-martial",
+      "weight": "2lb."
+    },
+    {
+      "name": "Glaive",
+      "value": "20gp",
+      "desc": "1d10 Slashing, Heavy, Reach, Two-handed",
+      "type": "Weapon-martial",
+      "weight": "6lb."
+    },
+    {
+      "name": "Greataxe",
+      "value": "30gp",
+      "desc": "1d12 Slashing, Heavy, Two-handed",
+      "type": "Weapon-martial",
+      "weight": "6lb."
+    },
+    {
+      "name": "Greatsword",
+      "value": "50gp",
+      "desc": "2d6 Slashing, Heavy, Reach, Two-handed",
+      "type": "Weapon-martial",
+      "weight": "6lb."
+    },
+    {
+      "name": "Halberd",
+      "value": "20gp",
+      "desc": "1d10 Slashing, Heavy, Reach, Two-handed",
+      "type": "Weapon-martial",
+      "weight": "6lb."
+    },
+    {
+      "name": "Lance",
+      "value": "10gp",
+      "desc": "1d12 Piercing, Reach, Special",
+      "type": "Weapon-martial",
+      "weight": "6lb."
+    },
+    {
+      "name": "Longsword",
+      "value": "15gp",
+      "desc": "1d8 Slashing, Versatile(1d10)",
+      "type": "Weapon-martial",
+      "weight": "3lb."
+    },
+    {
+      "name": "Maul",
+      "value": "10gp",
+      "desc": "2d6 Bludgeoning, Heavy, Two-handed",
       "type": "Weapon-martial",
       "weight": "10lb."
+    },
+    {
+      "name": "Morningstar",
+      "value": "15gp",
+      "desc": "1d8 Piercing",
+      "type": "Weapon-martial",
+      "weight": "4lb."
+    },
+    {
+      "name": "Pike",
+      "value": "5gp",
+      "desc": "1d10 Piercing, Heavy, Reach, Two-handed",
+      "type": "Weapon-martial",
+      "weight": "18lb."
+    },
+    {
+      "name": "Rapier",
+      "value": "25gp",
+      "desc": "1d8 Piercing, Finesse",
+      "type": "Weapon-martial",
+      "weight": "2lb."
+    },
+    {
+      "name": "Scimitar",
+      "value": "25gp",
+      "desc": "1d6 Slashing, Finesse, Light",
+      "type": "Weapon-martial",
+      "weight": "3lb."
+    },
+    {
+      "name": "Shortsword",
+      "value": "10gp",
+      "desc": "1d6 Piercing, Finesse, Light",
+      "type": "Weapon-martial",
+      "weight": "2lb."
+    },
+    {
+      "name": "Trident",
+      "value": "5gp",
+      "desc": "1d6 Piercing, Thrown, Versatile(1d8)",
+      "type": "Weapon-martial",
+      "weight": "4lb."
+    },
+    {
+      "name": "War Pick",
+      "value": "5gp",
+      "desc": "1d8 Piercing",
+      "type": "Weapon-martial",
+      "weight": "2lb."
+    },
+    {
+      "name": "Warhammer",
+      "value": "15gp",
+      "desc": "1d8 Bludgeoning, Versatile(1d10)",
+      "type": "Weapon-martial",
+      "weight": "2lb."
+    },
+    {
+      "name": "Whip",
+      "value": "2gp",
+      "desc": "1d4 Slashing, Finesse, Reach",
+      "type": "Weapon-martial",
+      "weight": "3lb."
+    },
+    {
+      "name": "Light Crossbow",
+      "value": "25gp",
+      "desc": "1d8 Piercing, Ranged, Ammunition, Loading, Two-handed",
+      "type": "Weapon-Simple",
+      "weight": "5lb."
+    },
+    {
+      "name": "Dart",
+      "value": "5cp",
+      "desc": "1d4 Piercing, Ranged, Finesse, Thrown",
+      "type": "Weapon-simple",
+      "weight": "1/4 lb."
+    },
+    {
+      "name": "Shortbow",
+      "value": "25gp",
+      "desc": "1d6 Piercing, Ranged, Ammunition, Two-handed",
+      "type": "Weapon-simple",
+      "weight": "2lb."
+    },
+    {
+      "name": "Sling",
+      "value": "1sp",
+      "desc": "1d4 Bludgeoning, Ranged, Ammunition",
+      "type": "Weapon-simple",
+      "weight": "0lb."
+    },
+    {
+      "name": "Blowgun",
+      "value": "10gp",
+      "desc": "1 Piercing, Ranged, Ammunition",
+      "type": "Weapon-martial",
+      "weight": "1lb."
+    },
+    {
+      "name": "Hand Crossbow",
+      "value": "75gp",
+      "desc": "1d6 Piercing, Ranged, Ammunition, Light",
+      "type": "Weapon-martial",
+      "weight": "1lb."
+    },
+    {
+      "name": "Heavy Crossbow",
+      "value": "50gp",
+      "desc": "1d10 Piercing, Ranged, Ammunition, Heavy, Two-handed",
+      "type": "Weapon-martial",
+      "weight": "18lb."
+    },
+    {
+      "name": "Longbow",
+      "value": "50gp",
+      "desc": "1d8 Piercing, Ranged, Ammunition, Heavy, Two-handed",
+      "type": "Weapon-martial",
+      "weight": "2lb."
+    },
+    {
+      "name": "Net",
+      "value": "1gp",
+      "desc": "Thrown, Special",
+      "type": "Weapon-martial",
+      "weight": "3lb."
+    },
+    {
+      "name": "Padded Armor",
+      "value": "5gp",
+      "desc": "AC: 11+Dex Mod",
+      "type": "Armor-Light",
+      "weight": "8lb."
+    },
+    {
+      "name": "Leather Armor",
+      "value": "10gp",
+      "desc": "AC: 11+Dex Mod",
+      "type": "Armor-Light",
+      "weight": "10lb."
+    },
+    {
+      "name": "Studded Leather Armor",
+      "value": "45gp",
+      "desc": "AC: 12+Dex Mod",
+      "type": "Armor-Light",
+      "weight": "13lb."
+    },
+    {
+      "name": "Hide Armor",
+      "value": "10gp",
+      "desc": "AC: 12+Dex Mod(max +2)",
+      "type": "Armor-Medium",
+      "weight": "12lb."
+    },
+    {
+      "name": "Chain Shirt",
+      "value": "50gp",
+      "desc": "AC: 13+Dex Mod(max +2)",
+      "type": "Armor-Medium",
+      "weight": "20lb."
+    },
+    {
+      "name": "Scale mail",
+      "value": "50gp",
+      "desc": "AC: 14+Dex Mod(max +2)",
+      "type": "Armor-Medium",
+      "weight": "45lb."
+    },
+    {
+      "name": "Breastplate",
+      "value": "400gp",
+      "desc": "AC: 14+Dex Mod(max +2)",
+      "type": "Armor-Medium",
+      "weight": "20lb."
+    },
+    {
+      "name": "Half plate",
+      "value": "750gp",
+      "desc": "AC: 15+Dex Mod(max +2)",
+      "type": "Armor-Medium",
+      "weight": "40lb."
+    },
+    {
+      "name": "Ring mail",
+      "value": "30gp",
+      "desc": "AC: 14",
+      "type": "Armor-Heavy",
+      "weight": "40lb."
+    },
+    {
+      "name": "Chain mail",
+      "value": "75gp",
+      "desc": "AC: 16, req. Str 13",
+      "type": "Armor-Heavy",
+      "weight": "55lb."
+    },
+    {
+      "name": "Splint",
+      "value": "200gp",
+      "desc": "AC: 17, req. Str 15",
+      "type": "Armor-Heavy",
+      "weight": "60lb."
+    },
+    {
+      "name": "Plate Armor",
+      "value": "1500gp",
+      "desc": "AC: 18, req. Str 15",
+      "type": "Armor-Heavy",
+      "weight": "65lb."
+    },
+    {
+      "name": "Shield",
+      "value": "10gp",
+      "desc": "AC: +2",
+      "type": "Armor-Shield",
+      "weight": "6lb."
+    },
+    {
+      "name": "Acid (vial)",
+      "value": "25gp",
+      "desc": " 2d6 acid ",
+      "type": "General",
+      "weight": "1lb."
     },
     {
       "name": "Abacus",
@@ -87,30 +367,681 @@
     {
       "name": "Alchemist's Fire (flask)",
       "value": "50gp",
-      "desc": "Thrown: Deals 1d4 fire damage each turn, DC 10 Dex to extinguish the flames",
+      "desc": "1d4 fire  each turn, DC 10 Dex to extinguish the flames",
       "type": "General",
       "weight": ".5lb."
     },
     {
-      "name": "Padded Armor",
-      "value": "5gp",
-      "desc": "AC: 11+Dex Mod",
-      "type": "Armor-Light",
-      "weight": "8lb."
+      "name": "Arrow (20)",
+      "value": "1gp",
+      "desc": "Ammunition",
+      "type": "General",
+      "weight": "1lb."
     },
     {
-      "name": "Plate Armor",
-      "value": "1500gp",
-      "desc": "AC: 12+Dex Mod(max 2)",
-      "type": "Armor-Heavy",
-      "weight": "65lb."
+      "name": "Blowgun needles (50)",
+      "value": "1gp",
+      "desc": "Ammunition",
+      "type": "General",
+      "weight": "1lb."
     },
     {
-      "name": "Shield",
+      "name": "Crossbow bolts (20)",
+      "value": "1gp",
+      "desc": "Ammunition",
+      "type": "General",
+      "weight": "1.5lb."
+    },
+    {
+      "name": "Sling bullets (20)",
+      "value": "4cp",
+      "desc": "Ammunition",
+      "type": "General",
+      "weight": "1.5lb."
+    },
+    {
+      "name": "Antitoxin (vial)",
+      "value": "50 gp",
+      "desc": "Gain advantage on saving throws agianst poison for 1 hour",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Crystal (Arcane Focus)",
       "value": "10gp",
-      "desc": "AC: +2",
-      "type": "Armor-Shield",
+      "desc": "Arcane Focus",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Orb (Arcane Focus)",
+      "value": "20gp",
+      "desc": "Arcane Focus",
+      "type": "General",
+      "weight": "3lb."
+    },
+    {
+      "name": "Rod (Arcane Focus)",
+      "value": "10gp",
+      "desc": "Arcane Focus",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Staff (Arcane Focus)",
+      "value": "5gp",
+      "desc": "Arcane Focus",
+      "type": "General",
+      "weight": "4lb."
+    },
+    {
+      "name": "Wand (Arcane Focus)",
+      "value": "10gp",
+      "desc": "Arcane Focus",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Backpack",
+      "value": "2gp",
+      "desc": "Use adventuring item",
+      "type": "General",
+      "weight": "5lb."
+    },
+    {
+      "name": "Ball bearings (bag of 1,000)",
+      "value": "1gp",
+      "desc": "As an action, you can spread these balls. Failing a DC 10 Dex check will cause creatures to fall prone.",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Barrel",
+      "value": "2gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "70lb."
+    },
+    {
+      "name": "Basket",
+      "value": "4sp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Bedroll",
+      "value": "1gp",
+      "desc": "Simple item",
+      "type": "General",
+      "weight": "3lb."
+    },
+    {
+      "name": "Bell",
+      "value": "1gp",
+      "desc": "Simple item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Blanket",
+      "value": "5sp",
+      "desc": "Simple item",
+      "type": "General",
+      "weight": "3lb."
+    },
+    {
+      "name": "Block and Tackle",
+      "value": "5sp",
+      "desc": "Pully System that allow you to hoist up to four the weight you can normally lift.",
+      "type": "General",
+      "weight": "5lb."
+    },
+    {
+      "name": "Book",
+      "value": "25gp",
+      "desc": "Simplie Item",
+      "type": "General",
+      "weight": "5lb."
+    },
+    {
+      "name": "Glass bottle ",
+      "value": "2gp",
+      "desc": "Simplie Item",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Bucket",
+      "value": "5cp",
+      "desc": "Simplie Item",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Caltrops (bag of 20)",
+      "value": "1gp",
+      "desc": "Simplie Item",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Candle",
+      "value": "1cp",
+      "desc": "Simplie Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Crossbow Bolt Case",
+      "value": "1gp",
+      "desc": "Holds upto 20 bolts",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Map or Scroll Case",
+      "value": "1gp",
+      "desc": "Cylindrical leather case can hold up to ten rolled-up sheets of paper",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Chain (10 feet)",
+      "value": "5gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "10lb."
+    },
+    {
+      "name": "Chalk (1 piece)",
+      "value": "1cp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Chest",
+      "value": "5cp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "25lb."
+    },
+    {
+      "name": "Climber's Kit",
+      "value": "25gp",
+      "desc": "Allows you to climb without falling more than 25 ft on failing",
+      "type": "General",
+      "weight": "12lb."
+    },
+    {
+      "name": "Common Clothes",
+      "value": "5sp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "3lb."
+    },
+    {
+      "name": "Costume Clothes",
+      "value": "5gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "4lb."
+    },
+    {
+      "name": "Fine Clothes",
+      "value": "15gp",
+      "desc": "Simple Item",
+      "type": "General",
       "weight": "6lb."
+    },
+    {
+      "name": "Traveler's Clothes",
+      "value": "2gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "4lb."
+    },
+    {
+      "name": "Component pouch",
+      "value": "25gp",
+      "desc": "A sall leather belt pouch that has compartments to hold all hte material componetns and other special items you need to cast spells",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Crowbar",
+      "value": "2gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "5lb."
+    },
+    {
+      "name": "Sprig of mistletoe (Druidic Focus)",
+      "value": "1gp",
+      "desc": "Druidic Focus",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Totem (Druidic Focus)",
+      "value": "1gp",
+      "desc": "Druidic Focus",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Wooden Staff (Druidic Focus)",
+      "value": "5gp",
+      "desc": "Druidic Focus",
+      "type": "General",
+      "weight": "4lb."
+    },
+    {
+      "name": "Yew Wand (Druidic Focus)",
+      "value": "10gp",
+      "desc": "Druidic Focus",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Fishing tackle",
+      "value": "1gp",
+      "desc": "Go Fishin'",
+      "type": "General",
+      "weight": "4lb."
+    },
+    {
+      "name": "Flask or Tankard",
+      "value": "2cp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Grappling hook",
+      "value": "2gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "4lb."
+    },
+    {
+      "name": "Hammer",
+      "value": "1gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "3lb."
+    },
+    {
+      "name": "Sledgehammer",
+      "value": "2gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "10lb."
+    },
+    {
+      "name": "Healer's kit",
+      "value": "5gp",
+      "desc": "10 users. As an action stabilze a creature that has 0 hit points, without needing skill check.",
+      "type": "General",
+      "weight": "3lb."
+    },
+    {
+      "name": "Holy Symbol (Amulet)",
+      "value": "5gp",
+      "desc": "Holy Symbol representation of a god or pantheon",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Holy Symbol (Emblem)",
+      "value": "5gp",
+      "desc": "Holy Symbol representation of a god or pantheon",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Holy Symbol (Reliquary)",
+      "value": "5gp",
+      "desc": "Holy Symbol representation of a god or pantheon",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Holy water (flask)",
+      "value": "25gp",
+      "desc": "Deals 2d6 radiant damage to fiends or undead",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Hourglass",
+      "value": "25gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Hunting trap",
+      "value": "5gp",
+      "desc": "Set a trap. Any creature that steps on it must succeed at DC 13 Dex or take 1d4 piercing damage and stop moving. As an action a DC 13 strength check to free itself or take 1 peirce damage on each fail.",
+      "type": "General",
+      "weight": "25lb."
+    },
+    {
+      "name": "Ink (1 ounce bottle)",
+      "value": "10gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Ink pen",
+      "value": "2 cp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Jug of Pitcher",
+      "value": "2 cp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "4lb."
+    },
+    {
+      "name": "Ladder (10 ft)",
+      "value": "1 sp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "25lb."
+    },
+    {
+      "name": "Lamp",
+      "value": "5sp",
+      "desc": "Cast Brith light in 15-foot radius and im light for an addtional 30ft",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Lantern, bullseye",
+      "value": "10gp",
+      "desc": "cast bright light in a 60 ft cone and dim light for an additional 60ft",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Lantern, hooded",
+      "value": "5gp",
+      "desc": "Lantern, but as an action can dim the light ",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Lock",
+      "value": "10gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Magnifying glass",
+      "value": "100gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "manacles",
+      "value": "2gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "6lb."
+    },
+    {
+      "name": "Mess kit",
+      "value": "2sp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Mirror, steel",
+      "value": "5gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": ".5lb."
+    },
+    {
+      "name": "Oil (flask)",
+      "value": "1sp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Paper (one sheet)",
+      "value": "2sp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Parchment (one sheet)",
+      "value": "1sp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Perfume (vial)",
+      "value": "5gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Miner's Pick",
+      "value": "2gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "10lb."
+    },
+    {
+      "name": "Piton",
+      "value": "5cp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": ".25lb."
+    },
+    {
+      "name": "Poison, basic (vial)",
+      "value": "100gp",
+      "desc": "Coat a weapon or 3 pieces of ammuntion. A creather hit by the poison must make a DC 10 CON check or take 1d4 poison damage",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Pole (10 foot)",
+      "value": "5cp",
+      "desc": "siple item",
+      "type": "General",
+      "weight": "7lb."
+    },
+    {
+      "name": "Pot, Iron",
+      "value": "2gp",
+      "desc": "siple item",
+      "type": "General",
+      "weight": "10lb."
+    },
+    {
+      "name": "Potion of Healing",
+      "value": "50gp",
+      "desc": "Drink the red fluid to regain 2d4+2 hit points",
+      "type": "General",
+      "weight": ".5lb."
+    },
+    {
+      "name": "Pouch",
+      "value": "5sp",
+      "desc": "A pouch that can hold 20 slign bullets or 50 blowgun needles among other things.",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Quiver",
+      "value": "1gp",
+      "desc": "Can hold 20 arrows",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Porable Ram",
+      "value": "4gp",
+      "desc": "Can use to break down door with a +4 bonus on the STR check.",
+      "type": "General",
+      "weight": "35lb."
+    },
+    {
+      "name": "Rations (1 day)",
+      "value": "5sp",
+      "desc": "Travel ration for 1 day",
+      "type": "General",
+      "weight": "2lb."
+    },
+    {
+      "name": "Robes",
+      "value": "1gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "4lb."
+    },
+    {
+      "name": "Hempen Rope (50ft)",
+      "value": "1gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "10lb."
+    },
+    {
+      "name": "Silk Rope (50ft)",
+      "value": "10gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "5lb."
+    },
+    {
+      "name": "Sack",
+      "value": "1cp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": ".5lb."
+    },
+    {
+      "name": "Mechant's Scale",
+      "value": "5gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "3lb."
+    },
+    {
+      "name": "Sealing wax",
+      "value": "5sp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Shovel",
+      "value": "2gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "5lb."
+    },
+    {
+      "name": "Signal whistle",
+      "value": "5cp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Signet ring",
+      "value": "5gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Soap",
+      "value": "2cp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Spellbook",
+      "value": "50gp",
+      "desc": "Essential for wizards, a spellbook is a leather-bound tome with 100 vellum pages suitable for recording spells.",
+      "type": "General",
+      "weight": "3lb."
+    },
+    {
+      "name": "Spikes, Iron (10)",
+      "value": "1gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "5lb."
+    },
+    {
+      "name": "Spyglass",
+      "value": "1,000gp",
+      "desc": "Object viewed throug the spyglass appear twice as large.",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Tent, Two-person",
+      "value": "2gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "20lb."
+    },
+    {
+      "name": "Tinderbox",
+      "value": "5sp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Torch",
+      "value": "1cp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "1lb."
+    },
+    {
+      "name": "Vial",
+      "value": "1gp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "0lb."
+    },
+    {
+      "name": "Waterskin",
+      "value": "2sp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "5lb."
+    },
+    {
+      "name": "Whetstone",
+      "value": "1cp",
+      "desc": "Simple Item",
+      "type": "General",
+      "weight": "1lb."
     }
   ]
 }

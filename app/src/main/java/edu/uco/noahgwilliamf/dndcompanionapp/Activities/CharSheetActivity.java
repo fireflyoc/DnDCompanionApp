@@ -54,7 +54,8 @@ AttackAddFragment.attackAddListener, ItemAddFragment.addItemListener{
         intent = getIntent();
 
         fm = getFragmentManager();
-
+        attackList = new ArrayList<String>();
+        gearList = new ArrayList<>();
 
         setUpNavi();
 
@@ -541,6 +542,11 @@ AttackAddFragment.attackAddListener, ItemAddFragment.addItemListener{
                         break;
                     case 2:  //Attacks and Spellcasting
                         attackList = pc.attackList;
+                        for(String t: pc.spellList){
+                            if(!attackList.contains(t)){
+                                attackList.add(t);
+                            }
+                        }
                         if(!attackList.contains("Add New")){
                             attackList.add(0, "Add New");
                         }
@@ -559,7 +565,11 @@ AttackAddFragment.attackAddListener, ItemAddFragment.addItemListener{
                         break;
                     case 3: //Other Proficiencies
                         otherProfs = pc.languages;
-                        otherProfs.addAll(pc.tools);
+                        for(String t: pc.tools){
+                            if(!otherProfs.contains(t)){
+                                otherProfs.add(t);
+                            }
+                        }
                         if(!otherProfs.contains("Add New")){
                             otherProfs.add(0, "Add New");
                         }
@@ -600,6 +610,9 @@ AttackAddFragment.attackAddListener, ItemAddFragment.addItemListener{
     @Override
     protected void onResume() {
         super.onResume();
+        System.out.println("Resuming CHarSheetActivity");
+        attackList.clear();
+        gearList.clear();
         drawer.closeDrawers();
     }
 
@@ -650,6 +663,10 @@ AttackAddFragment.attackAddListener, ItemAddFragment.addItemListener{
     @Override
     public void addAttack(String s) {
         attackList.add(s);
+        listAdapter.notifyDataSetChanged();
+    }
+
+    public void update(){
         listAdapter.notifyDataSetChanged();
     }
 }//end class

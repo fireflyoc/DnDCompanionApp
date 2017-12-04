@@ -40,9 +40,9 @@ class AttackAddFragment extends DialogFragment {
                     + " must implement ProfAddListener");
         }
         et = new EditText(getActivity());
-        et.setHint("Add Item");
+        et.setHint("Add Attack");
         et.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
-        return new AlertDialog.Builder(getActivity()).setTitle("Add Item")
+        return new AlertDialog.Builder(getActivity()).setTitle("Add Attack")
                 .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

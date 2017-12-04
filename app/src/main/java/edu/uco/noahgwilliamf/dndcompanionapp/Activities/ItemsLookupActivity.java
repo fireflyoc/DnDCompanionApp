@@ -67,7 +67,7 @@ public class ItemsLookupActivity extends DnDResourceLookUpActivity {
 
             public boolean onItemLongClick(AdapterView<?> arg0, View v, int i, long arg3) {
                 System.out.println("LONG CLICKED");
-                DnDResourceDialogFragmentAddItem frag = DnDResourceDialogFragmentAddItem.newInstance(itemList.get(i).getName(), "spell");
+                DnDResourceDialogFragmentAddItem frag = DnDResourceDialogFragmentAddItem.newInstance(itemList.get(i).getName(), "item");
                 frag.show(fm, "item_additem_fragment");
                 return true;
             }
@@ -141,7 +141,7 @@ public class ItemsLookupActivity extends DnDResourceLookUpActivity {
             if (typeFilter.equalsIgnoreCase("any")) {
                 itemList.clear();
                 for (DnDItem s : JSONResourceReader.getItemList()) {
-                    if (s.getName().toLowerCase().contains(nameFilter)) {
+                    if (s.getName().toLowerCase().contains(nameFilter.toLowerCase())) {
                         itemList.add(s);
                     }
                 }
@@ -149,7 +149,7 @@ public class ItemsLookupActivity extends DnDResourceLookUpActivity {
                 itemList.clear();
                 for (DnDItem s : JSONResourceReader.getItemList()) {
                     if (s.getType().toLowerCase().contains(typeFilter.toLowerCase())) {
-                        if (s.getName().toLowerCase().contains(nameFilter)) {
+                        if (s.getName().toLowerCase().contains(nameFilter.toLowerCase())) {
                             itemList.add(s);
                         }
                     }
@@ -173,7 +173,7 @@ public class ItemsLookupActivity extends DnDResourceLookUpActivity {
             } else {
                 itemList.clear();
                 for (DnDItem s : JSONResourceReader.getItemList()) {
-                    if (s.getType().toLowerCase().contains(filter)) {
+                    if (s.getType().toLowerCase().contains(filter.toLowerCase())) {
                         itemList.add(s);
                     }
                 }

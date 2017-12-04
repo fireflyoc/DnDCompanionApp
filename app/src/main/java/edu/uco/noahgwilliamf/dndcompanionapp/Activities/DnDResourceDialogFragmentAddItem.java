@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -113,31 +112,23 @@ public class DnDResourceDialogFragmentAddItem extends DialogFragment {
                     case "spell":
                         if (selection.equalsIgnoreCase(pcs.get(0).toString())) {
                             CharSheetActivity.pc1.spellList.add(getArguments().getString("name"));
-                            break;
                         }
-
                         else if (selection.equalsIgnoreCase(pcs.get(1).toString())) {
                             CharSheetActivity.pc2.spellList.add(getArguments().getString("name"));
-                            break;
                         }
                         else if (selection.equalsIgnoreCase(pcs.get(2).toString())) {
                             CharSheetActivity.pc3.spellList.add(getArguments().getString("name"));
-                            break;
                         }
                         break;
                     case "item":
                         if (selection.equalsIgnoreCase(pcs.get(0).toString())) {
                             CharSheetActivity.pc1.itemList.add(getArguments().getString("name"));
-                            break;
                         }
-
                         else if (selection.equalsIgnoreCase(pcs.get(1).toString())) {
                             CharSheetActivity.pc2.itemList.add(getArguments().getString("name"));
-                            break;
                         }
                         else if (selection.equalsIgnoreCase(pcs.get(2).toString())) {
                             CharSheetActivity.pc3.itemList.add(getArguments().getString("name"));
-                            break;
                         }
                         break;
                     default:

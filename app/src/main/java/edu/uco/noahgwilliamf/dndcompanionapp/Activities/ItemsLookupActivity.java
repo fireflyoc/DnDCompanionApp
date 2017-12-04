@@ -63,6 +63,18 @@ public class ItemsLookupActivity extends DnDResourceLookUpActivity {
 
         });
 
+        itemListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+            public boolean onItemLongClick(AdapterView<?> arg0, View v, int i, long arg3) {
+                System.out.println("LONG CLICKED");
+                DnDResourceDialogFragmentAddItem frag = DnDResourceDialogFragmentAddItem.newInstance(itemList.get(i).getName(), "spell");
+                frag.show(fm, "item_additem_fragment");
+                return true;
+            }
+        });
+
+
+
         final EditText searchInput = (EditText) findViewById(R.id.item_lookup_searchInput);
 
         final Spinner itemTypeSpinner = (Spinner) findViewById(R.id.item_lookup_typespinner);
@@ -87,6 +99,7 @@ public class ItemsLookupActivity extends DnDResourceLookUpActivity {
 
             }
         });
+
 
         searchInput.addTextChangedListener(new TextWatcher() {
             @Override

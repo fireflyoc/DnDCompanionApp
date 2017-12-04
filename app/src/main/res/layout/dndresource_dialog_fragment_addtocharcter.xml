@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_thick"
+    android:layout_margin="2sp"
+    >
+
+    <TextView
+        android:id="@+id/dnd_additem_dialog_frag_name_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add to "
+        android:textSize="20sp"
+        android:layout_margin="2sp"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/border"
+        />
+
+    <Spinner
+        android:id="@+id/dnd_additem_dialog_frag_name_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/dnd_additem_dialog_frag_okbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OK!"
+        android:textSize="20sp"
+        android:layout_margin="2sp"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/border"
+        />
+
+</LinearLayout>

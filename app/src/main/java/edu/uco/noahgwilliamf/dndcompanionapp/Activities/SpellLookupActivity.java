@@ -31,14 +31,14 @@ public class SpellLookupActivity extends DnDResourceLookUpActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)    {
+    protected void onCreate(Bundle savedInstanceState) {
 
         setContentView(R.layout.resource_spelllookup_activity);
 
         super.onCreate(savedInstanceState);
     }
 
-    protected void doSetup(){
+    protected void doSetup() {
         spellList = new ArrayList<>();
         resetList();
 
@@ -48,6 +48,7 @@ public class SpellLookupActivity extends DnDResourceLookUpActivity {
 
         spellListView.setAdapter(spellAdapter);
 
+        spellListView.setLongClickable(true);
         spellListView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -61,6 +62,17 @@ public class SpellLookupActivity extends DnDResourceLookUpActivity {
             }
 
         });
+
+        spellListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+            public boolean onItemLongClick(AdapterView<?> arg0, View v, int i, long arg3) {
+                System.out.println("LONG CLICKED");
+                DnDResourceDialogFragmentAddItem frag = DnDResourceDialogFragmentAddItem.newInstance(spellList.get(i).getName(), "spell");
+                frag.show(fm, "spell_additem_fragment");
+                return true;
+            }
+        });
+
 
         Button sortByNameButton = (Button) findViewById(R.id.spell_lookup_sortByAlpha);
         Button sortByLevelButton = (Button) findViewById(R.id.spell_lookup_sortByLevel);
@@ -144,7 +156,7 @@ public class SpellLookupActivity extends DnDResourceLookUpActivity {
 
     }
 
-    protected void setUpNavi(){
+    protected void setUpNavi() {
         super.setUpNavi();
         drawer = (DrawerLayout) findViewById(R.id.spell_lookup_layout);
         menuList = (ListView) findViewById(R.id.spell_lookup_menu);

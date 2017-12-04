@@ -22,7 +22,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import edu.uco.noahgwilliamf.dndcompanionapp.Controls.NavigationDrawerClickListener;
-import edu.uco.noahgwilliamf.dndcompanionapp.Controls.XMLReader;
 import edu.uco.noahgwilliamf.dndcompanionapp.Models.PlayerCharacter;
 import edu.uco.noahgwilliamf.dndcompanionapp.R;
 
@@ -30,7 +29,8 @@ import edu.uco.noahgwilliamf.dndcompanionapp.R;
  * Created by Noah G on 10/27/2017.
  */
 
-public class CharSheetActivity extends Activity {
+public class CharSheetActivity extends Activity implements ProfAddFragment.profAddListener,
+AttackAddFragment.attackAddListener, ItemAddFragment.addItemListener{
 
     private DrawerLayout drawer;
     private ListView menuList, charList;
@@ -40,8 +40,11 @@ public class CharSheetActivity extends Activity {
     private EditText charStr, charDex, charCon, charInt, charWis, charCha, charCurHP, charMaxHP, charSpeed, charAC;
     private Intent intent;
     public static PlayerCharacter pc1 = null, pc2 = null, pc3 = null;
-    private XMLReader reader;
     private Spinner listSpinner;
+    private ArrayList<String> gearList, attackList, otherProfs;
+    private android.app.FragmentManager fm;
+    ArrayAdapter<String> listAdapter;
+    private int curChar;
 
 
     @Override
@@ -50,7 +53,8 @@ public class CharSheetActivity extends Activity {
         setContentView(R.layout.char_sheet_stats);
         intent = getIntent();
 
-        reader = new XMLReader();
+        fm = getFragmentManager();
+
 
         setUpNavi();
 
@@ -65,7 +69,8 @@ public class CharSheetActivity extends Activity {
     }
 
     private void setUpChars() throws XmlPullParserException, IOException {
-        switch (intent.getIntExtra("CharNum",0)) {
+        curChar = intent.getIntExtra("CharNum",0);
+        switch (curChar) {
             case 0:
                 setUpDisplay(pc1);
                 break;
@@ -91,6 +96,7 @@ public class CharSheetActivity extends Activity {
         intBonus = (TextView) findViewById(R.id.charIntBonus);
         wisBonus = (TextView) findViewById(R.id.charWisBonus);
         chaBonus = (TextView) findViewById(R.id.charChaBonus);
+
 
         charAC = (EditText) findViewById(R.id.char_stats_ac);
         charAC.setText(pc.getBaseAC()+"");
@@ -405,7 +411,7 @@ public class CharSheetActivity extends Activity {
         listSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                ArrayAdapter<String> listAdapter;
+
                 switch (pos){
                     case 0: //Skills and Proficiencies
                         String[] s;
@@ -516,18 +522,59 @@ public class CharSheetActivity extends Activity {
                         charList.setAdapter(listAdapter);
                         break;
                     case 1:  //Gear and items
-                        listAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.char_skill_list_item, pc.itemList);
+                        gearList = pc.itemList;
+                        if(!gearList.contains("Add New")){
+                            gearList.add(0, "Add New");
+                        }
+                        listAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.char_skill_list_item, gearList);
                         charList.setAdapter(listAdapter);
+                        charList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
+                                if(parent.getItemAtPosition(pos).toString().equalsIgnoreCase("add new")){
+                                    ItemAddFragment ifrag = new ItemAddFragment(pc);
+                                    ifrag.show(fm, "tag");
+
+                                }
+                            }
+                        });
                         break;
                     case 2:  //Attacks and Spellcasting
-                        listAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.char_skill_list_item, pc.attackList);
+                        attackList = pc.attackList;
+                        if(!attackList.contains("Add New")){
+                            attackList.add(0, "Add New");
+                        }
+                        listAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.char_skill_list_item, attackList);
                         charList.setAdapter(listAdapter);
+                        charList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int pos, long l) {
+                                if(parent.getItemAtPosition(pos).toString().equalsIgnoreCase("add new")){
+                                    AttackAddFragment afrag = new AttackAddFragment(pc);
+                                    afrag.show(fm, "tag");
+
+                                }
+                            }
+                        });
                         break;
                     case 3: //Other Proficiencies
-                        ArrayList<String> t = pc.languages;
-                        t.addAll(pc.tools);
-                        listAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.char_skill_list_item, t);
+                        otherProfs = pc.languages;
+                        otherProfs.addAll(pc.tools);
+                        if(!otherProfs.contains("Add New")){
+                            otherProfs.add(0, "Add New");
+                        }
+                        listAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.char_skill_list_item, otherProfs);
                         charList.setAdapter(listAdapter);
+                        charList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int pos, long l) {
+                                if(parent.getItemAtPosition(pos).toString().equalsIgnoreCase("add new")){
+                                    ProfAddFragment pfrag = new ProfAddFragment(pc);
+                                    pfrag.show(fm, "tag");
+
+                                }
+                            }
+                        });
                         break;
                 }
             }
@@ -588,4 +635,21 @@ public class CharSheetActivity extends Activity {
     }
 
 
+    @Override
+    public void addProficiency(String prof) {
+        otherProfs.add(prof);
+        listAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void addItem(String s) {
+        gearList.add(s);
+        listAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void addAttack(String s) {
+        attackList.add(s);
+        listAdapter.notifyDataSetChanged();
+    }
 }//end class
